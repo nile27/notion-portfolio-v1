@@ -1,26 +1,85 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* React Notion X 필수 스타일 */
+@import "react-notion-x/src/styles.css";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Pretendard Variable", Pretendard, var(--font-noto), -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --font-heading: "Pretendard Variable", Pretendard, var(--font-noto), sans-serif;
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --shadow-notion-card: 0px 4px 18px rgba(0, 0, 0, 0.04), 0px 2.025px 7.84688px rgba(0, 0, 0, 0.027), 0px 0.8px 2.925px rgba(0, 0, 0, 0.02), 0px 0.175px 1.04062px rgba(0, 0, 0, 0.01);
+  --shadow-notion-deep: 0px 1px 3px rgba(0, 0, 0, 0.01), 0px 3px 7px rgba(0, 0, 0, 0.02), 0px 7px 15px rgba(0, 0, 0, 0.02), 0px 14px 28px rgba(0, 0, 0, 0.04), 0px 23px 52px rgba(0, 0, 0, 0.05);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #ffffff;
+  --foreground: rgba(0, 0, 0, 0.95);
+  --primary: #f0efeb;
+  --primary-foreground: rgba(0, 0, 0, 0.95);
+  --border: rgba(0, 0, 0, 0.1);
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: rgba(245, 158, 11, 0.1);
+  --accent-foreground: #b45309;
+  --input: #e4e4e7;
+  --ring: #a1a1aa;
+  --radius: 0.25rem;
+}
+
+.dark {
+  --background: #15130f;
+  --foreground: #fafafa;
+  --border: #323129;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --accent: rgba(251, 191, 36, 0.15);
+  --accent-foreground: #fef3c7;
+  --input: #27272a;
+  --ring: #3f3f46;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .display-hero {
+    @apply text-5xl sm:text-7xl font-bold tracking-tight leading-[1.1];
+  }
+
+  .section-heading {
+    @apply text-4xl sm:text-5xl font-bold tracking-tight mb-12;
+  }
+}
+
+/* Notion Renderer Minimal Fixes */
+.notion-page {
+  width: 100% !important;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
