@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     type: "website",
   },
+  verification: {
+    google: "mRz3HOQXLPv6SratisvhC6jMRzSydo_JSs7JEzIZl5g",
+  },
   alternates: {
     canonical: SITE_CONFIG.url,
   },
