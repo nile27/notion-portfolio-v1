@@ -11,7 +11,7 @@ import { ContactSection } from "@/components/contact/contact-section";
 export const metadata: Metadata = {
   title: "임민규 | 프론트엔드 개발자 포트폴리오",
   description: "사용자 중심의 가치를 실현하는 프론트엔드 개발자 임민규입니다. 한남대학교 컴퓨터무인기술학과 전공.",
-  keywords: ["임민규", "프론트엔드", "개발자", "포트폴리오", "한남대학교", "컴퓨터무인기술학과", "Next.js", "React"],
+  keywords: ["임민규", "프론트엔드 개발자 임민규", "Mingyu's Portfolio", "프론트엔드", "개발자", "포트폴리오", "한남대학교", "컴퓨터무인기술학과", "Next.js", "React"],
   openGraph: {
     title: "임민규 | 프론트엔드 개발자 포트폴리오",
     description: "사용자 중심의 가치를 실현하는 프론트엔드 개발자 임민규입니다.",
