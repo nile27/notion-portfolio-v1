@@ -20,7 +20,7 @@ export function ProjectCard({ project, onClick, className }: ProjectCardProps) {
   return (
     <div
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-b-2xl rounded-t-none border border-border bg-background transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer h-full shadow-sm",
+        "group relative flex flex-col overflow-hidden rounded-b-2xl rounded-t-sm border border-border bg-background transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer h-full shadow-sm",
         className
       )}
       onClick={onClick}
