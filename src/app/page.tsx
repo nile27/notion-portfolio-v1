@@ -9,6 +9,17 @@ import { SITE_CONFIG } from "@/config/site";
 import { ContactSection } from "@/components/contact/contact-section";
 
 export const metadata: Metadata = {
+  title: "임민규 | 프론트엔드 개발자 포트폴리오",
+  description: "사용자 중심의 가치를 실현하는 프론트엔드 개발자 임민규입니다. 한남대학교 컴퓨터무인기술학과 전공.",
+  keywords: ["임민규", "프론트엔드", "개발자", "포트폴리오", "한남대학교", "컴퓨터무인기술학과", "Next.js", "React"],
+  openGraph: {
+    title: "임민규 | 프론트엔드 개발자 포트폴리오",
+    description: "사용자 중심의 가치를 실현하는 프론트엔드 개발자 임민규입니다.",
+    url: SITE_CONFIG.url,
+    siteName: "임민규 포트폴리오",
+    locale: "ko_KR",
+    type: "website",
+  },
   alternates: {
     canonical: SITE_CONFIG.url,
   },
@@ -135,39 +146,73 @@ export default function Home() {
       {/* Activity (Education & Awards) Section */}
       <Section id="activity" className="container mx-auto max-w-7xl px-4 scroll-mt-20">
         <h2 className="section-heading">Activity</h2>
-        <div className="grid gap-12 md:grid-cols-2 mt-8">
-          {/* Education Column */}
-          <div className="space-y-6">
+        
+        <div className="mt-12 space-y-20">
+          {/* 1st Row: Education */}
+          <div className="space-y-8">
             <h3 className="text-2xl font-bold flex items-center gap-2">
               <span className="text-primary text-xl">🎓</span> Education
             </h3>
-            <div className="space-y-6">
-              {portfolioData.education.map((edu, index) => (
-                <div key={index} className="rounded-2xl border border-border p-6 bg-card/50 shadow-sm transition-all hover:shadow-md">
-                  <div className="flex flex-col gap-1 mb-3">
-                    <h4 className="text-lg font-bold tracking-tight">{edu.institution}</h4>
-                    <span className="text-sm font-medium text-muted-foreground">{edu.period}</span>
-                  </div>
-                  <p className="text-muted-foreground font-medium">{edu.program}</p>
+            
+            <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
+              {/* Academic Sub-section */}
+              <div className="space-y-4">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground/60 px-1 border-l-2 border-primary/30 ml-1">Academic</h4>
+                <div className="space-y-4">
+                  {portfolioData.education.academic.map((edu, index) => (
+                    <div key={index} className="rounded-2xl border border-border p-6 bg-card/50 shadow-sm transition-all hover:shadow-md flex flex-col">
+                      <div className="flex flex-col gap-1 mb-3">
+                        <h4 className="text-lg font-bold tracking-tight">{edu.institution}</h4>
+                        <span className="text-sm font-medium text-muted-foreground">{edu.period}</span>
+                      </div>
+                      <p className="text-muted-foreground font-medium">{edu.program}</p>
+                      {edu.description && (
+                        <p className="text-sm text-muted-foreground/80 mt-2 leading-relaxed border-t border-border/50 pt-2 italic whitespace-pre-line">
+                          {edu.description}
+                        </p>
+                      )}
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Bootcamps Sub-section */}
+              <div className="space-y-4">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground/60 px-1 border-l-2 border-primary/30 ml-1">Bootcamps & Training</h4>
+                <div className="space-y-4">
+                  {portfolioData.education.bootcamps.map((edu, index) => (
+                    <div key={index} className="rounded-2xl border border-border p-6 bg-card/50 shadow-sm transition-all hover:shadow-md">
+                      <div className="flex flex-col gap-1 mb-3">
+                        <h4 className="text-lg font-bold tracking-tight">{edu.institution}</h4>
+                        <span className="text-sm font-medium text-muted-foreground">{edu.period}</span>
+                      </div>
+                      <p className="text-muted-foreground font-medium">{edu.program}</p>
+                      {edu.description && (
+                        <p className="text-sm text-muted-foreground/80 mt-2 leading-relaxed border-t border-border/50 pt-2 italic">
+                          {edu.description}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Awards Column */}
-          <div className="space-y-6">
+          {/* 2nd Row: Awards */}
+          <div className="space-y-8">
             <h3 className="text-2xl font-bold flex items-center gap-2">
               <span className="text-primary text-xl">🏆</span> Awards
             </h3>
-            <div className="space-y-4">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {portfolioData.awards.map((award, index) => (
                 <div key={index} className="flex gap-4 p-5 rounded-2xl border border-border bg-card/50 shadow-sm items-center transition-all hover:shadow-md">
                   <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 text-sm">
                     🏆
                   </div>
                   <div>
-                    <h4 className="text-base font-bold">{award.title}</h4>
-                    <p className="text-xs text-muted-foreground">{award.organization} · {award.date}</p>
+                    <h4 className="text-sm font-bold leading-tight tracking-tight break-keep">{award.title}</h4>
+                    <p className="text-xs text-muted-foreground mt-1">{award.organization} · {award.date}</p>
                   </div>
                 </div>
               ))}

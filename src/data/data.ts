@@ -9,7 +9,7 @@ export const portfolioData = {
     email: "ddj03104@gmail.com",
     image: "/profile_img.jpeg",
     github: "https://github.com/nile27",
-    university: "한남대학교 컴퓨터공학 전공",
+    university: "한남대학교 컴퓨터무인기술학과 컴퓨터 트랙 (졸업)",
     introduction: `사용자의 불편을 해소하는 데서 서비스 개발이 시작된다고 믿습니다. 특히 웹 프론트엔드는 사용자가 처음 마주하는 접점인 만큼, 직관적이고 편리한 UI/UX를 통해 가치 있는 경험을 전달하는 개발자를 지향합니다.
 
 팀을 위해 스스로 해야 할 일을 찾아 실행하고, 원활한 소통을 통해 실질적인 기여를 해냈을 때 가장 큰 보람을 느낍니다. 함께 목표를 이루며 성취를 공유하는 개발자로 성장하고자 합니다.
@@ -86,18 +86,41 @@ Next.js와 React 기반의 프론트엔드 교육 과정을 수료하고, 실제
       image: "/logo/잇츠 .svg",
     },
   ],
-  education: [
-    {
-      institution: "한남대학교",
-      program: "컴퓨터공학과 졸업 (공학사)",
-      period: "2016.03 - 2023.02",
-    },
-    {
-      institution: "Hannam Design Factory",
-      program: "다학제간 협업 프로젝트 트랙",
-      period: "2019.03 - 2020.06",
-    },
-  ],
+  education: {
+    academic: [
+      {
+        institution: "한남대학교",
+        program: "컴퓨터무인기술학과 컴퓨터 트랙 (졸업)",
+        period: "2016.03 - 2023.02",
+      },
+      {
+        institution: "Hannam Design Factory",
+        program: "다학제간 협업 프로젝트 트랙 (수료)",
+        period: "2019.03 - 2020.06",
+        description: "다양한 전공자들과 협업하여 아이디어 구체화 및 Prototype 제작\n(K-Water 산학 협력 등)",
+      },
+    ],
+    bootcamps: [
+      {
+        institution: "코드잇 스프린트",
+        program: "심화 프론트엔드 엔지니어 부트캠프 (수료)",
+        period: "2024.06 - 2024.08",
+        description: "Next.js 기반 jest, Tailwind CSS 등 프론트엔드 현업에 필요한 심화 기술 강의 수강 및 팀 협업 프로젝트 진행",
+      },
+      {
+        institution: "스나이퍼팩토리",
+        program: "프로젝트 캠프: Next.js 1기 (수료)",
+        period: "2024.06 - 2024.08",
+        description: "TypeScript, Next.js를 통한 웹 개발 및 API Routes를 이용한 백엔드 교육, 기업 연계 팀 프로젝트 진행",
+      },
+      {
+        institution: "코드스테이츠",
+        program: "FrontEnd Engineering 과정 (수료)",
+        period: "2022.12 - 2023.06",
+        description: "JavaScript, React 기반 프론트엔드 개발 및 약 200여 개의 알고리즘 문제 풀이 협업 프로젝트 진행",
+      },
+    ],
+  },
   awards: [
     {
       title: "컴퓨터공학과 학술제 장려상",
@@ -110,14 +133,24 @@ Next.js와 React 기반의 프론트엔드 교육 과정을 수료하고, 실제
       date: "2020.08",
     },
     {
-      title: "상상창업경진대회 최우수상",
+      title: "산학협력 페스티벌 캡스톤 디자인 경진대회 장려상",
+      organization: "한남대학교",
+      date: "2019.12",
+    },
+    {
+      title: "Hannam Star Venture 상상창업경진대회 최우수상",
       organization: "한남대학교 창업지원단",
       date: "2019.12",
     },
     {
-      title: "WTA 하이테크 페어 장려상",
+      title: "WTA 대전 하이테크 페어 아이디어 공모전 장려상",
       organization: "대전광역시, 세계과학도시연합",
       date: "2019.10",
+    },
+    {
+      title: "학생 창업유망팀 300 최종 선정",
+      organization: "교육부, 과학기술정보통신부",
+      date: "2019.08",
     },
   ],
 };
