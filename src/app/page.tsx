@@ -19,6 +19,20 @@ export const metadata: Metadata = {
     siteName: "임민규 포트폴리오",
     locale: "ko_KR",
     type: "website",
+    images: [
+      {
+        url: SITE_CONFIG.ogImage,
+        width: 1200,
+        height: 630,
+        alt: SITE_CONFIG.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_CONFIG.name,
+    description: SITE_CONFIG.description,
+    images: [SITE_CONFIG.ogImage],
   },
   verification: {
     google: "mRz3HOQXLPv6SratisvhC6jMRzSydo_JSs7JEzIZl5g",
