@@ -5,11 +5,8 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 
-import "react-notion-x/src/styles.css";
-import "prismjs/themes/prism-tomorrow.css";
-import "katex/dist/katex.min.css";
-
 const noto = Noto_Sans_KR({
+
   variable: "--font-noto",
   subsets: ["latin"],
   weight: ["400", "500", "700"],

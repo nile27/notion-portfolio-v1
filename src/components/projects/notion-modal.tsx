@@ -1,6 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import "react-notion-x/src/styles.css"
+import "prismjs/themes/prism-tomorrow.css"
+import "katex/dist/katex.min.css"
+
 import { NotionRenderer } from "react-notion-x"
 import { ExtendedRecordMap } from "notion-types"
 import { useTheme } from "next-themes"
@@ -36,15 +40,18 @@ export function NotionModal({ isOpen, onClose, notionId, title, initialRecordMap
   useEffect(() => {
     if (isOpen && notionId) {
       if (initialRecordMap) {
+        // 서버에서 받아온 초기 데이터가 있으면 즉시 사용 (로딩 생략)
         setRecordMap(initialRecordMap)
+        setLoading(false)
       } else {
+        // 데이터가 없는 경우에만 클라이언트에서 페칭 (Fallback)
         fetchNotionData(notionId)
       }
-    } else if (!isOpen) {
-      // 모달이 닫히면 데이터 초기화 (다음 열릴 때 새 데이터를 받기 위함)
-      setRecordMap(null)
     }
   }, [isOpen, notionId, initialRecordMap])
+
+
+
 
   async function fetchNotionData(id: string) {
     setLoading(true)
@@ -60,6 +67,7 @@ export function NotionModal({ isOpen, onClose, notionId, title, initialRecordMap
       setLoading(false)
     }
   }
+
 
   const notionUrl = notionId ? `https://notion.so/${notionId.replace(/-/g, "")}` : "#"
 

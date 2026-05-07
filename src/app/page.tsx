@@ -8,6 +8,10 @@ import { Metadata } from "next";
 import { SITE_CONFIG } from "@/config/site";
 import { ContactSection } from "@/components/contact/contact-section";
 
+import { getAllProjectRecordMaps } from "@/lib/notion-server";
+
+export const revalidate = 3600; // 1시간마다 페이지 갱신 (ISR)
+
 export const metadata: Metadata = {
   title: "임민규 | 프론트엔드 개발자 포트폴리오",
   description: "사용자 중심의 가치를 실현하는 프론트엔드 개발자 임민규입니다. 한남대학교 컴퓨터무인기술학과 전공.",
@@ -42,8 +46,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  // 빌드 타임 혹은 ISR 주기에 맞춰 모든 프로젝트의 노션 데이터를 미리 가져옴
+  const recordMaps = await getAllProjectRecordMaps();
+  
   return (
+
+
     <div className="flex flex-col gap-20 pb-20 overflow-hidden">
       <HeroSection />
 
@@ -155,9 +164,8 @@ export default function Home() {
       </Section>
 
       {/* Projects Section */}
-      {/* Projects Section */}
       <Section id="projects" className="container mx-auto max-w-7xl px-4 scroll-mt-20">
-        <ProjectSection />
+        <ProjectSection initialRecordMaps={JSON.parse(JSON.stringify(recordMaps))} />
       </Section>
 
       {/* Activity (Education & Awards) Section */}
