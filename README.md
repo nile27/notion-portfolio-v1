@@ -56,5 +56,4 @@
 *   **Performance**: 100 / **Accessibility**: 100 / **Best Practices**: 100 / **SEO**: 100
 *   모든 지표를 **All-Green**으로 달성하며, 코드의 품질과 성능 최적화 능력을 동시에 검증했습니다.
 
----
-**제출자**: 임민규 (Hannam University, Computer Science)
+
