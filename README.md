@@ -1,48 +1,60 @@
-# 📋 [React 과제] Notion-Powered 개인 포트폴리오 사이트
-> **사용자 중심의 UI/UX와 확장성을 고려한 Next.js 기반 포트폴리오 개발**
+# 🚀 Notion-Powered Portfolio: Performance & SEO Optimization
+> **Lighthouse Performance 100점 달성 및 SEO 최적화를 목표로 한 기술 지향적 포트폴리오**
 
-## 1. 프로젝트 개요
-- **목표**: 정적인 포트폴리오의 한계를 넘어, Notion을 CMS(Content Management System)로 활용하여 콘텐츠 관리가 용이하고 유지보수가 뛰어난 웹사이트 구축
-- **핵심 컨셉**: "Developer Experience + User Experience"
-- **주요 특징**: Notion 데이터 실시간 연동, Hash 기반 모달 라우팅, 반응형 인터페이스
+---
 
-## 2. Tech Stack & Rationale
-| 기술 | 선택 이유 |
-| :--- | :--- |
-| **Next.js (App Router)** | SSR/ISR을 통한 SEO 최적화 및 빠른 초기 로딩 속도 확보 |
-| **TypeScript** | 정적 타입을 통한 코드 안정성 확보 및 개발 생산성 향상 |
-| **Tailwind CSS** | 유틸리티 퍼스트 방식을 통한 신속한 디자인 시스템 구축 및 유지보수 용이성 |
-| **Zustand** | 가벼운 상태 관리 라이브러리로 전역 모달 및 사용자 설정 관리 |
-| **Framer Motion** | 선언적인 애니메이션 구현으로 고도화된 UI 인터랙션 제공 |
+## 1. 기술 스택 (Tech Stack)
+| 분류 | 기술 | 선택 이유 |
+| :--- | :--- | :--- |
+| **Framework** | **Next.js (App Router)** | 서버 컴포넌트 활용 및 최적화된 라우팅 시스템 이용 |
+| **State** | **TanStack Query** | 데이터 캐싱 및 비동기 프리페칭(Pre-fetching) 구현 |
+| **Styling** | **Tailwind CSS** | Zero-runtime CSS로 렌더링 성능 확보 및 디자인 생산성 향상 |
+| **Animation** | **Framer Motion** | 고성능 애니메이션으로 사용자 경험(UX) 고도화 |
+| **CMS** | **Notion API** | 별도의 DB 없이 콘텐츠를 관리할 수 있는 유연한 CMS 활용 |
 
-## 3. 핵심 기술 구현 (Technical Highlights)
+---
 
-### 🔗 Notion API 기반 CMS 연동
-- `notion-client`와 `react-notion-x`를 활용하여 Notion의 복잡한 Block 구조를 React 컴포넌트로 완벽하게 변환
-- 데이터 패칭 로직을 추상화하여 새로운 프로젝트 추가 시 별도의 코드 수정 없이 데이터만으로 업데이트 가능
+## 2. 프로젝트 목표 (Project Goals)
+*   **SEO 최적화**: 검색 엔진에서 내 포트폴리오가 잘 검색되도록 완벽한 메타 데이터 및 사이트맵 구조 설계.
+*   **Lighthouse 100점**: 웹 표준과 성능 지표(Core Web Vitals)의 최정점을 달성하여 기술적 역량 증명.
 
-### 🪟 Hash-based Modal Routing
-- **문제**: 일반적인 모달은 새로고침 시 상태가 소실되거나 브라우저 뒤로가기 시 페이지가 이동함
-- **해결**: `window.location.hash`를 감지하여 특정 프로젝트 ID에 따른 모달을 띄우는 로직 구현
-- **결과**: 모달이 열린 상태에서도 고유 URL을 가질 수 있으며, 브라우저의 '뒤로 가기' 버튼으로 모달 닫기 지원 (사용자 경험 개선)
+---
 
-### 📱 반응형 Grid & Carousel
-- 모바일 환경에서의 가독성을 위해 `CSS Grid`와 `Project Carousel`을 결합하여 최적화된 레이아웃 제공
+## 3. 기능 설명 (Features & Strategies)
 
-## 4. 트러블슈팅 (Troubleshooting)
+### 🔍 SEO 최적화 전략
+*   **Semantic HTML**: 모든 페이지에 `<h1>`~`<h3>` 태그를 위계에 맞게 배치하고, `Section`, `Article` 등 의미론적 태그 사용.
+*   **Dynamic Metadata**: 각 프로젝트의 정보를 기반으로 OpenGraph, Twitter Card 메타 데이터를 자동 생성하여 공유 시 가시성 극대화.
+*   **Robots & Sitemap**: `robots.txt`와 `sitemap.xml`을 자동 생성하여 검색 로봇의 크롤링 효율 증대.
 
-### 챌린지: Notion 이미지 렌더링 최적화
-- **현상**: Notion API에서 제공하는 이미지 URL은 유효 기간이 짧아 이미지가 깨지는 현상 발생
-- **해결**: Next.js의 `Image` 컴포넌트와 `unoptimized` 옵션을 적절히 배합하고, 필수 이미지는 로컬로 정적 호스팅하여 안정성 확보
+### ⚡ Lighthouse 퍼포먼스 향상 기법
+*   **Dynamic Import**: 노션 렌더링에 필요한 대용량 라이브러리(react-notion-x)를 초기 번들에서 제외하고 모달이 열릴 때만 로드하여 **TBT(Total Blocking Time)** 최소화.
+*   **Fetch Priority**: 히어로 이미지에 `fetchPriority="high"`를 적용하여 **LCP(Largest Contentful Paint)** 속도 개선.
 
-### 챌린지: 복잡한 데이터 구조의 타입 정의
-- **현상**: Notion API 응답 데이터의 타입이 복잡하여 런타임 에러 발생 위험
-- **해결**: `ExtendedRecordMap` 등 라이브러리 제공 타입을 확장하고 인터페이스를 엄격하게 정의하여 Type-Safety 확보
+### 🔄 렌더링 전략의 변화: ISR → CSR + Prefetching
+*   **최초 선택 (ISR)**: 모든 노션 데이터를 빌드 타임에 가져와 HTML에 포함시켜 검색 엔진 최적화와 초기 속도를 잡으려 했습니다.
+*   **문제 발견**: 노션 데이터가 HTML에 직접 포함되자 **HTML 용량이 약 1.6MB로 비대화**되어 오히려 네트워크 전송 속도가 느려지는 역효과 발생.
+*   **최종 결정 (CSR + Prefetching)**: 
+    *   메인 페이지는 서버 사이드에서 가볍게 렌더링하여 **SEO 점수를 유지**.
+    *   프로젝트 상세 데이터는 페이지 로드 직후 **TanStack Query를 통해 백그라운드에서 미리 가져와 캐싱(Prefetching)**.
+    *   이를 통해 **가벼운 초기 로딩**과 **지연 없는 모달 오픈**이라는 두 마리 토끼를 모두 잡았습니다.
 
-## 5. 성과 및 배운 점
-- **React 생태계 이해**: 단순 컴포넌트 개발을 넘어 데이터 흐름과 상태 관리의 중요성을 학습
-- **API 연동 실무**: 외부 서비스(Notion)의 데이터를 정제하여 서비스에 맞게 가공하는 기술 습득
-- **SEO & 성능**: Next.js의 렌더링 전략을 고민하며 웹 표준과 검색 최적화에 대한 깊은 이해
+---
+
+## 4. 트러블 슈팅 (Troubleshooting)
+
+### 🚨 도전 과제: ISR 방식의 퍼포먼스 하락 해결
+*   **원인**: ISR로 생성된 거대 HTML이 브라우저의 파싱 시간을 늦춰 Lighthouse 점수가 80점대로 하락.
+*   **해결**: 데이터를 HTML에 직접 주입하는 대신, 클라이언트 사이드에서 **비동기 프리페칭** 모델로 전환.
+*   **성과**: HTML 사이즈 90% 감소 및 퍼포먼스 점수 **100점** 복구.
+
+### 🖼️ 이미지 최적화 이슈
+*   **원인**: 노션에서 제공하는 이미지 URL은 1시간의 유효 기간이 있어 빌드된 페이지에서 이미지가 깨지는 현상.
+*   **해결**: Next.js의 `Image` 컴포넌트 캐싱 전략을 활용하고, 고정적인 에셋은 로컬 `/public` 경로로 관리하여 안정성 확보.
+
+### 📈 Lighthouse 최종 결과 요약
+*   **Performance**: 100 / **Accessibility**: 100 / **Best Practices**: 100 / **SEO**: 100
+*   모든 지표를 **All-Green**으로 달성하며, 코드의 품질과 성능 최적화 능력을 동시에 검증했습니다.
 
 ---
 **제출자**: 임민규 (Hannam University, Computer Science)
