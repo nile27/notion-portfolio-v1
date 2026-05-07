@@ -45,7 +45,7 @@ export function ProjectSection({ initialRecordMaps }: ProjectSectionProps) {
   return (
     <section id="projects" className="container mx-auto max-w-7xl px-4 scroll-mt-20">
       <h2 className="section-heading">Projects</h2>
-      
+
       {/* 캐러셀 버전을 메인으로 사용 */}
       <div className="bg-secondary/10 rounded-3xl py-10 mt-12">
         <ProjectCarousel onProjectClick={handleOpenModal} />
