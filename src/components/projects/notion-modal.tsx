@@ -4,7 +4,14 @@ import { useState, useEffect } from "react"
 import { NotionRenderer } from "react-notion-x"
 import { ExtendedRecordMap } from "notion-types"
 import { useTheme } from "next-themes"
+import { useQuery } from "@tanstack/react-query"
 import dynamic from "next/dynamic"
+
+// Notion 관련 스타일 임포트 (모달 로드 시에만 로드됨)
+import "react-notion-x/src/styles.css"
+import "prismjs/themes/prism-tomorrow.css"
+import "katex/dist/katex.min.css"
+
 import {
   Dialog,
   DialogContent,
@@ -24,44 +31,28 @@ interface NotionModalProps {
   onClose: () => void
   notionId: string | null
   title: string
-  initialRecordMap?: ExtendedRecordMap
 }
 
-export function NotionModal({ isOpen, onClose, notionId, title, initialRecordMap }: NotionModalProps) {
-  const [recordMap, setRecordMap] = useState<ExtendedRecordMap | null>(initialRecordMap || null)
-  const [loading, setLoading] = useState(false)
+export function NotionModal({ isOpen, onClose, notionId, title }: NotionModalProps) {
   const { resolvedTheme } = useTheme()
 
-  // 모달이 열릴 때마다 데이터를 가져오거나 초기 데이터 사용
-  useEffect(() => {
-    if (isOpen && notionId) {
-      if (initialRecordMap) {
-        setRecordMap(initialRecordMap)
-      } else {
-        fetchNotionData(notionId)
-      }
-    } else if (!isOpen) {
-      // 모달이 닫히면 데이터 초기화 (다음 열릴 때 새 데이터를 받기 위함)
-      setRecordMap(null)
-    }
-  }, [isOpen, notionId, initialRecordMap])
+  // React Query를 이용해 모든 프로젝트 데이터(캐시)에서 내 데이터 찾기
+  const { data: allRecordMaps, isLoading } = useQuery<Record<string, ExtendedRecordMap>>({
+    queryKey: ["projects-data"],
+    queryFn: async () => {
+      const res = await fetch("/api/projects")
+      if (!res.ok) throw new Error("Failed to fetch")
+      return res.json()
+    },
+    enabled: isOpen, // 모달이 열릴 때만 쿼리 활성화 (이미 캐시되어 있다면 즉시 반환)
+    staleTime: 60 * 60 * 1000,
+  })
 
-  async function fetchNotionData(id: string) {
-    setLoading(true)
-    try {
-      const response = await fetch(`/api/notion?pageId=${id}`)
-      if (!response.ok) throw new Error("Failed to fetch")
-      const data = await response.json()
-      setRecordMap(data)
-    } catch (error) {
-      console.error("Notion Fetch Error:", error)
-      setRecordMap(null)
-    } finally {
-      setLoading(false)
-    }
-  }
+  const normalizedId = notionId?.replace(/-/g, "")
+  const recordMap = normalizedId && allRecordMaps ? allRecordMaps[normalizedId] : null
 
   const notionUrl = notionId ? `https://notion.so/${notionId.replace(/-/g, "")}` : "#"
+
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -93,7 +84,8 @@ export function NotionModal({ isOpen, onClose, notionId, title, initialRecordMap
         </div>
 
         <div className="flex-1 overflow-y-auto scrollbar-hide">
-          {loading ? (
+          {isLoading ? (
+
             <div className="flex h-full items-center justify-center">
               <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
             </div>
