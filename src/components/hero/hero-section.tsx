@@ -50,7 +50,7 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 1 }}
-            className="max-w-[500px] text-lg text-muted-foreground/80 border-l-2 border-primary/30 "
+            className="max-w-[500px] text-lg text-muted-foreground/80 border-0 outline-none border-primary/30 "
           >
             {hero.description}
           </motion.p>
