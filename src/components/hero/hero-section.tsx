@@ -90,7 +90,9 @@ export function HeroSection() {
               height={600}
               className="object-cover transition-transform duration-700 hover:scale-110"
               priority
+              fetchPriority="high"
             />
+
           </div>
           <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full bg-primary/30 blur-2xl animate-bounce" />
           <div className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-accent/20 blur-3xl animate-pulse" />

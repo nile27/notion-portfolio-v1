@@ -2,10 +2,8 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* React Notion X 필수 스타일 */
-@import "react-notion-x/src/styles.css";
-
 @custom-variant dark (&:is(.dark *));
+
 
 @theme inline {
   --color-background: var(--background);
