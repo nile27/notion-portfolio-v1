@@ -36,7 +36,7 @@ interface NotionModalProps {
 export function NotionModal({ isOpen, onClose, notionId, title }: NotionModalProps) {
   const { resolvedTheme } = useTheme()
 
-  // React Query를 이용해 모든 프로젝트 데이터(캐시)에서 내 데이터 찾기
+  // SSR Hydration을 통해 서버에서 미리 렌더링된 캐시 데이터를 즉시 사용합니다.
   const { data: allRecordMaps, isLoading } = useQuery<Record<string, ExtendedRecordMap>>({
     queryKey: ["projects-data"],
     queryFn: async () => {
