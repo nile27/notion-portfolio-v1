@@ -79,13 +79,28 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Person",
-              name: "임민규",
-              jobTitle: "Frontend Developer",
-              url: SITE_CONFIG.url,
-              image: `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
-              sameAs: [SITE_CONFIG.links.github, SITE_CONFIG.links.blog],
-              description: SITE_CONFIG.description,
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": `${SITE_CONFIG.url}/#website`,
+                  url: SITE_CONFIG.url,
+                  name: SITE_CONFIG.name,
+                  description: SITE_CONFIG.description,
+                  publisher: {
+                    "@id": `${SITE_CONFIG.url}/#person`,
+                  },
+                },
+                {
+                  "@type": "Person",
+                  "@id": `${SITE_CONFIG.url}/#person`,
+                  name: "임민규",
+                  jobTitle: "Frontend Developer",
+                  url: SITE_CONFIG.url,
+                  image: `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
+                  sameAs: [SITE_CONFIG.links.github, SITE_CONFIG.links.blog].filter(Boolean),
+                  description: SITE_CONFIG.description,
+                }
+              ]
             }),
           }}
         />
