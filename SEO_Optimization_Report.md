@@ -32,7 +32,7 @@
 
 *   **Sitemap 자동 생성 (`sitemap.ts`)**: 사이트의 모든 주소를 구글 로봇에게 지도로 제공하여 수집 속도를 높였습니다.
 *   **Robots 설정 (`robots.ts`)**: 검색 로봇의 방문 허용 범위를 명시하고 사이트맵의 위치를 안내했습니다.
-*   **Canonical URL 설정**: `https://notion-portfolio-v1.vercel.app`을 표준 주소로 설정하여 중복 콘텐츠 문제를 방지했습니다.
+*   **Canonical URL 설정**: `https://mingyu-portfolio.vercel.app`을 표준 주소로 설정하여 중복 콘텐츠 문제를 방지했습니다.
 
 ## 4. 검색 엔진 연동 (Search Engine Integration)
 실제 검색 결과에 반영되기 위한 공식적인 절차를 완료했습니다.
@@ -44,7 +44,7 @@
 
 ## 💡 향후 관리 가이드
 1.  **배포 확인**: 코드 수정 후 반드시 Vercel 배포가 완료되었는지 확인하세요.
-2.  **검색 확인**: 약 3~7일 후 구글에 `"임민규 컴퓨터무인기술학과"` 또는 `"site:notion-portfolio-v1.vercel.app"`를 검색하여 노출 여부를 체크하세요.
+2.  **검색 확인**: 약 3~7일 후 구글에 `"임민규 컴퓨터무인기술학과"` 또는 `"site:mingyu-portfolio.vercel.app"`를 검색하여 노출 여부를 체크하세요.
 3.  **백링크 확보**: GitHub 프로필, SNS 등에 포트폴리오 주소를 링크하면 검색 순위 상승에 큰 도움이 됩니다.
 
 ---

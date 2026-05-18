@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { portfolioData } from "@/data/data"
-import { useQuery } from "@tanstack/react-query"
 import dynamic from "next/dynamic"
 
 const NotionModal = dynamic(() => import("./notion-modal").then(mod => mod.NotionModal), {
@@ -13,16 +12,7 @@ import { ProjectCarousel } from "./project-carousel"
 export function ProjectSection() {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null)
 
-  // 백그라운드 프리페칭: 컴포넌트 마운트 시 모든 노션 데이터를 미리 가져와 캐싱
-  const { data: allRecordMaps } = useQuery({
-    queryKey: ["projects-data"],
-    queryFn: async () => {
-      const res = await fetch("/api/projects")
-      if (!res.ok) throw new Error("Failed to fetch")
-      return res.json()
-    },
-    staleTime: 60 * 60 * 1000, // 1시간 동안 신선함 유지
-  })
+
 
   // URL 해시 변경 감지하여 모달 열기/닫기
   useEffect(() => {

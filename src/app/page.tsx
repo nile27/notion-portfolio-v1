@@ -7,6 +7,8 @@ import { HeroSection } from "@/components/hero/hero-section";
 import { Metadata } from "next";
 import { SITE_CONFIG } from "@/config/site";
 import { ContactSection } from "@/components/contact/contact-section";
+import { HydrationBoundary, QueryClient, dehydrate } from "@tanstack/react-query";
+import { getAllProjectRecordMaps } from "@/lib/notion-server";
 
 export const metadata: Metadata = {
   title: "임민규 | 프론트엔드 개발자 포트폴리오",
@@ -42,7 +44,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const queryClient = new QueryClient();
+
+  // 서버 사이드 프리페칭 (진짜 0초 지연을 위한 캐싱)
+  await queryClient.prefetchQuery({
+    queryKey: ["projects-data"],
+    queryFn: async () => {
+      const data = await getAllProjectRecordMaps();
+      return JSON.parse(JSON.stringify(data)); // 직렬화 에러 방지
+    },
+  });
+
   return (
     <div className="flex flex-col gap-20 pb-20 overflow-hidden">
       <HeroSection />
@@ -155,9 +168,10 @@ export default function Home() {
       </Section>
 
       {/* Projects Section */}
-      {/* Projects Section */}
       <Section id="projects" className="container mx-auto max-w-7xl px-4 scroll-mt-20">
-        <ProjectSection />
+        <HydrationBoundary state={dehydrate(queryClient)}>
+          <ProjectSection />
+        </HydrationBoundary>
       </Section>
 
       {/* Activity (Education & Awards) Section */}
