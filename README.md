@@ -1,6 +1,8 @@
 # 🚀 Notion-Powered Portfolio: Performance & SEO Optimization
 > **Lighthouse Performance 100점 달성 및 SEO 최적화를 목표로 진행한 포트폴리오**
 
+🔗 **[Live Demo (배포 링크) 보러가기](https://mingyu-portfolio.vercel.app)**
+
 
 ## 1. 기술 스택 (Tech Stack)
 | 분류 | 기술 | 선택 이유 |
