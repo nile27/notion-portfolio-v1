@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_CONFIG.name}`,
   },
   description: SITE_CONFIG.description,
-  keywords: ["프론트엔드", "개발자", "포트폴리오", "Next.js", "React", "Notion", "임민규", "Frontend", "Developer", "Portfolio", "Lim Mingyu", "Mingyu Lim", "Frontend Developer", "mingyu-portfolio", "mingyu portfolio", "임민규 포트폴리오"],
+  keywords: ["프론트엔드", "개발자", "포트폴리오", "Next.js", "React", "Notion", "임민규", "Frontend", "Developer", "Portfolio", "Lim Mingyu", "Mingyu Lim", "Frontend Developer", "mingyu-portfolio", "mingyu portfolio", "임민규 포트폴리오", "C#"],
   authors: [{ name: "임민규" }],
   creator: "임민규",
   robots: {
