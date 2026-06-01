@@ -11,12 +11,12 @@ import { HydrationBoundary, QueryClient, dehydrate } from "@tanstack/react-query
 import { getAllProjectRecordMaps } from "@/lib/notion-server";
 
 export const metadata: Metadata = {
-  title: "임민규 | 프론트엔드 개발자 포트폴리오",
-  description: "사용자 중심의 가치를 실현하는 프론트엔드 개발자 임민규입니다. 한남대학교 컴퓨터무인기술학과 전공.",
-  keywords: ["임민규", "mingyu-portfolio", "프론트엔드 개발자 포트폴리오", "임민규 포트폴리오", "프론트엔드 개발자 임민규", "Mingyu's Portfolio", "프론트엔드", "개발자", "포트폴리오", "한남대학교", "컴퓨터무인기술학과", "Next.js", "React", "C#"],
+  title: "임민규 | 개발자 포트폴리오",
+  description: "지속적인 성장과 효율적인 문제 해결을 지향하는 개발자 임민규입니다. 한남대학교 컴퓨터무인기술학과 전공.",
+  keywords: ["임민규", "개발자 포트폴리오", "임민규 포트폴리오", "개발자 임민규", "소프트웨어 엔지니어", "Mingyu's Portfolio", "프론트엔드", "백엔드", "개발자", "포트폴리오", "한남대학교", "컴퓨터무인기술학과", "Next.js", "React", "C#", "C# 개발자", "C# Developer"],
   openGraph: {
-    title: "임민규 | 프론트엔드 개발자 포트폴리오",
-    description: "사용자 중심의 가치를 실현하는 프론트엔드 개발자 임민규입니다.",
+    title: "임민규 | 개발자 포트폴리오",
+    description: "지속적인 성장과 효율적인 문제 해결을 지향하는 개발자 임민규입니다.",
     url: SITE_CONFIG.url,
     siteName: "임민규 포트폴리오",
     locale: "ko_KR",
@@ -82,7 +82,7 @@ export default async function Home() {
             </div>
           </div>
           <div className="flex flex-col justify-center space-y-10">
-            <h3 className="text-3xl font-bold tracking-tight">안녕하세요!<br />프론트엔드 개발자 임민규입니다.</h3>
+            <h3 className="text-3xl font-bold tracking-tight">안녕하세요!<br />개발자 임민규입니다.</h3>
 
             <div className="space-y-8">
               <div className="space-y-2">

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_CONFIG.name}`,
   },
   description: SITE_CONFIG.description,
-  keywords: ["프론트엔드", "개발자", "포트폴리오", "Next.js", "React", "Notion", "임민규", "Frontend", "Developer", "Portfolio", "Lim Mingyu", "Mingyu Lim", "Frontend Developer", "mingyu-portfolio", "mingyu portfolio", "임민규 포트폴리오", "C#"],
+  keywords: ["개발자", "포트폴리오", "소프트웨어 엔지니어", "임민규", "Developer", "Portfolio", "Lim Mingyu", "Mingyu Lim", "임민규 포트폴리오", "C#", "C# 개발자", "C# Developer", "Next.js", "React", "프론트엔드", "Backend", "백엔드"],
   authors: [{ name: "임민규" }],
   creator: "임민규",
   robots: {
@@ -88,7 +88,7 @@ export default function RootLayout({
                   "@id": `${SITE_CONFIG.url}/#website`,
                   url: SITE_CONFIG.url,
                   name: SITE_CONFIG.name,
-                  alternateName: ["임민규 포트폴리오", "프론트엔드 개발자 포트폴리오", "Mingyu Portfolio"],
+                  alternateName: ["임민규 포트폴리오", "개발자 포트폴리오", "Mingyu Portfolio"],
                   description: SITE_CONFIG.description,
                   publisher: {
                     "@id": `${SITE_CONFIG.url}/#person`,
@@ -98,7 +98,7 @@ export default function RootLayout({
                   "@type": "Person",
                   "@id": `${SITE_CONFIG.url}/#person`,
                   name: "임민규",
-                  jobTitle: "프론트엔드 개발자 (Frontend Developer)",
+                  jobTitle: "개발자 (Developer)",
                   url: SITE_CONFIG.url,
                   image: `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
                   sameAs: [SITE_CONFIG.links.github, SITE_CONFIG.links.blog].filter(Boolean),
