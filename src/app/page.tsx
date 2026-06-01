@@ -12,11 +12,11 @@ import { getAllProjectRecordMaps } from "@/lib/notion-server";
 
 export const metadata: Metadata = {
   title: "임민규 | 개발자 포트폴리오",
-  description: "지속적인 성장과 효율적인 문제 해결을 지향하는 개발자 임민규입니다. 한남대학교 컴퓨터무인기술학과 전공.",
-  keywords: ["임민규", "개발자 포트폴리오", "임민규 포트폴리오", "개발자 임민규", "소프트웨어 엔지니어", "Mingyu's Portfolio", "프론트엔드", "백엔드", "개발자", "포트폴리오", "한남대학교", "컴퓨터무인기술학과", "Next.js", "React", "C#", "C# 개발자", "C# Developer"],
+  description: "지속적인 성장과 효율적인 문제 해결을 지향하는 개발자 임민규입니다. React, Next.js, C# 등을 다룹니다. 한남대학교 컴퓨터무인기술학과 전공.",
+  keywords: ["임민규", "개발자 포트폴리오", "임민규 포트폴리오", "개발자 임민규", "소프트웨어 엔지니어", "Mingyu's Portfolio", "프론트엔드", "백엔드", "개발자", "포트폴리오", "한남대학교", "컴퓨터무인기술학과", "C#", "C# 개발자", "C# Developer", "C샵", "Csharp", "WPF", "WPF 개발자", "Next.js", "React"],
   openGraph: {
     title: "임민규 | 개발자 포트폴리오",
-    description: "지속적인 성장과 효율적인 문제 해결을 지향하는 개발자 임민규입니다.",
+    description: "지속적인 성장과 효율적인 문제 해결을 지향하는 개발자 임민규입니다. React, Next.js, C# 등을 다룹니다.",
     url: SITE_CONFIG.url,
     siteName: "임민규 포트폴리오",
     locale: "ko_KR",
