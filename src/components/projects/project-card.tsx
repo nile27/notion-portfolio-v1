@@ -11,6 +11,7 @@ interface ProjectCardProps {
     tags: string[]
     image: string
     notionId: string
+    categories?: string[]
   }
   onClick: () => void
   className?: string

@@ -3,6 +3,7 @@ import { portfolioData } from "@/data/data";
 import { ProjectSection } from "@/components/projects/project-section";
 import { Section } from "@/components/layout/section";
 import { HeroSection } from "@/components/hero/hero-section";
+import { SkillsSection } from "@/components/skills/skills-section";
 
 import { Metadata } from "next";
 import { SITE_CONFIG } from "@/config/site";
@@ -88,7 +89,7 @@ export default async function Home() {
               <div className="space-y-2">
                 <h4 className="text-lg font-bold text-accent-foreground">🚀 이런 개발자를 지향합니다</h4>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  사용자의 불편을 해소하는 데서 서비스 개발이 시작된다고 믿습니다. 특히 웹 프론트엔드는 사용자가 처음 마주하는 접점인 만큼, 직관적이고 편리한 UI/UX를 통해 가치 있는 경험을 전달하는 개발자를 지향합니다.
+                  사용자의 불편을 해소하는 데서 모든 개발이 시작된다고 믿습니다. 직관적인 UI/UX부터 안정적인 시스템 구조까지 서비스 전반의 완성도를 높여 사용자에게 최선의 경험을 전달하고자 합니다.
                 </p>
               </div>
 
@@ -102,7 +103,7 @@ export default async function Home() {
               <div className="space-y-2">
                 <h4 className="text-lg font-bold text-accent-foreground">📚 이런 경험을 해보았습니다</h4>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  Next.js와 React 기반의 프론트엔드 교육 과정을 수료하고, 실제 프로젝트를 통해 실무 감각을 키웠습니다. 협업 이해를 높이기 위해 Figma를 활용한 화면 설계부터, Express 기반의 서버 개발 및 배포까지 직접 경험하며 역할 간의 흐름을 이해하려 노력했습니다.
+                  웹 서비스부터 데스크톱 애플리케이션 개발까지 다양한 기술을 다뤄왔습니다. 화면 설계부터 서버/클라이언트 개발 및 배포까지 서비스의 라이프사이클 전반을 경험하며 역할 간의 흐름을 유기적으로 이해하려 노력했습니다.
                 </p>
               </div>
             </div>
@@ -116,6 +117,8 @@ export default async function Home() {
           </div>
         </div>
       </Section>
+
+      <SkillsSection />
 
       {/* Career Section */}
       <Section id="career" className="bg-secondary/30 py-24 scroll-mt-20">

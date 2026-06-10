@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="600" viewBox="0 0 1500 600">
+  <defs>
+    <!-- Vibrant Modern Gradient (Indigo to Tech Blue to Purple) -->
+    <linearGradient id="vibrantGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312E81"/>   <!-- Deep Indigo -->
+      <stop offset="40%" stop-color="#1E40AF"/>  <!-- Deep Blue -->
+      <stop offset="75%" stop-color="#4F46E5"/>  <!-- Bright Indigo -->
+      <stop offset="100%" stop-color="#6D28D9"/> <!-- Deep Purple -->
+    </linearGradient>
+  </defs>
+
+  <!-- Solid Gradient Background -->
+  <rect width="100%" height="100%" fill="url(#vibrantGrad)"/>
+  
+  <!-- Centered Minimalist Italic White Text -->
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" font-style="italic" font-size="54" fill="#FFFFFF" letter-spacing="-1.5">SmartEye</text>
+</svg>

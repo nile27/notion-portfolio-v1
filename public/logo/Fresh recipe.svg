@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  
+  <!-- Logo Group (Centered at 600, 225) -->
+  <g transform="translate(600, 225)">
+    <!-- Icon: Minimalist leaf icon -->
+    <g transform="translate(-185, -30)">
+      <!-- Leaf Shape -->
+      <path d="M42 8C27 8 14 21 14 38C14 45 19 50 26 50C44 50 56 37 56 15C56 11 52 8 42 8Z" fill="#10b981"/>
+      <!-- Leaf Vein -->
+      <path d="M14 38C22 38 35 28 42 8" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none"/>
+    </g>
+    
+    <!-- Text: Fresh Recipe -->
+    <text x="-105" y="16" font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="900" font-style="italic" letter-spacing="-1.5">
+      <tspan fill="#0f172a">Fresh</tspan>
+      <tspan fill="#10b981" dx="12">Recipe</tspan>
+    </text>
+  </g>
+</svg>

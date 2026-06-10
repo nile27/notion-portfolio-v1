@@ -8,13 +8,23 @@ import { portfolioData } from "@/data/data"
 
 interface ProjectCarouselProps {
   onProjectClick: (id: string) => void
+  activeCategory: string
 }
 
-export function ProjectCarousel({ onProjectClick }: ProjectCarouselProps) {
+export function ProjectCarousel({ onProjectClick, activeCategory }: ProjectCarouselProps) {
   const [index, setIndex] = useState(0)
   const [mounted, setMounted] = useState(false)
   const [windowWidth, setWindowWidth] = useState(1200) // 기본값 설정
-  const projects = portfolioData.projects
+
+  const projects = portfolioData.projects.filter(project => {
+    if (activeCategory === "All") return true
+    return project.categories?.includes(activeCategory)
+  })
+
+  // 카테고리 변경 시 인덱스 리셋
+  useEffect(() => {
+    setIndex(0)
+  }, [activeCategory])
 
   // 클라이언트 마운트 완료 및 화면 크기 변화 감지
   useEffect(() => {
@@ -27,15 +37,25 @@ export function ProjectCarousel({ onProjectClick }: ProjectCarouselProps) {
   }, [])
 
   const next = () => {
+    if (projects.length === 0) return
     setIndex((prev) => (prev + 1) % projects.length)
   }
 
   const prev = () => {
+    if (projects.length === 0) return
     setIndex((prev) => (prev - 1 + projects.length) % projects.length)
   }
 
   // 마운트 전에는 서버와 동일한 초기 상태를 유지하거나 렌더링을 지연시킵니다.
   if (!mounted) return <div className="h-[600px]" />;
+
+  if (projects.length === 0) {
+    return (
+      <div className="flex h-[300px] w-full items-center justify-center text-muted-foreground font-semibold">
+        해당 기술 스택의 프로젝트가 아직 없습니다.
+      </div>
+    )
+  }
 
   // 반응형 수치 계산
   const isMobile = windowWidth < 768
@@ -94,39 +114,41 @@ export function ProjectCarousel({ onProjectClick }: ProjectCarouselProps) {
         </div>
 
         {/* Controls & Pagination */}
-        <div className="flex items-center gap-4 md:gap-8 mt-8 md:mt-12 z-20">
-          <button
-            onClick={prev}
-            className="p-2.5 md:p-3 rounded-full bg-background border border-border shadow-sm hover:bg-accent hover:scale-105 transition-all active:scale-95"
-            aria-label="Previous project"
-          >
-            <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
-          </button>
+        {projects.length > 1 && (
+          <div className="flex items-center gap-4 md:gap-8 mt-8 md:mt-12 z-20">
+            <button
+              onClick={prev}
+              className="p-2.5 md:p-3 rounded-full bg-background border border-border shadow-sm hover:bg-accent hover:scale-105 transition-all active:scale-95"
+              aria-label="Previous project"
+            >
+              <ChevronLeft className="w-4 h-4 md:w-5 md:h-5" />
+            </button>
 
-          <div className="flex flex-col items-center gap-1 min-w-[60px] md:min-w-[80px]">
-            <span className="text-lg md:text-xl font-bold tracking-tighter">
-              {String(index + 1).padStart(2, '0')}
-            </span>
-            <div className="w-6 md:w-8 h-0.5 bg-accent/30 relative overflow-hidden rounded-full">
-              <motion.div
-                className="absolute inset-0 bg-accent-foreground"
-                initial={false}
-                animate={{ x: `${(index / (projects.length - 1)) * 100 - 100}%` }}
-              />
+            <div className="flex flex-col items-center gap-1 min-w-[60px] md:min-w-[80px]">
+              <span className="text-lg md:text-xl font-bold tracking-tighter">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div className="w-6 md:w-8 h-0.5 bg-accent/30 relative overflow-hidden rounded-full">
+                <motion.div
+                  className="absolute inset-0 bg-accent-foreground"
+                  initial={false}
+                  animate={{ x: `${(index / (projects.length - 1)) * 100 - 100}%` }}
+                />
+              </div>
+              <span className="text-[8px] md:text-[10px] font-bold text-muted-foreground uppercase tracking-widest opacity-50">
+                Total {projects.length}
+              </span>
             </div>
-            <span className="text-[8px] md:text-[10px] font-bold text-muted-foreground uppercase tracking-widest opacity-50">
-              Total {projects.length}
-            </span>
-          </div>
 
-          <button
-            onClick={next}
-            className="p-2.5 md:p-3 rounded-full bg-background border border-border shadow-sm hover:bg-accent hover:scale-105 transition-all active:scale-95"
-            aria-label="Next project"
-          >
-            <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
-          </button>
-        </div>
+            <button
+              onClick={next}
+              className="p-2.5 md:p-3 rounded-full bg-background border border-border shadow-sm hover:bg-accent hover:scale-105 transition-all active:scale-95"
+              aria-label="Next project"
+            >
+              <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
+            </button>
+          </div>
+        )}
       </div>
 
       {/* 배경 장식 */}

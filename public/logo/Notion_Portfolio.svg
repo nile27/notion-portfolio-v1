@@ -1,0 +1,24 @@
+<svg width="1500" height="600" viewBox="0 0 1500 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Warm Cream Canvas Background (Custom background color #FEFAF2) -->
+  <rect width="1500" height="600" fill="#FEFAF2"/>
+  
+  <!-- Stylized 3D Block Icon with Custom LM Monogram (Favicon design) -->
+  <g transform="translate(480, 300) rotate(-10)">
+    <!-- Notion Solid Shadow Block -->
+    <rect x="-35" y="-35" width="80" height="80" rx="16" fill="rgba(0,0,0,0.95)"/>
+    <!-- Main White Card Block (Pure white to stand out against the warm cream background) -->
+    <rect x="-40" y="-40" width="80" height="80" rx="16" fill="#ffffff" stroke="rgba(0,0,0,0.95)" stroke-width="4.5"/>
+    
+    <!-- LM Monogram Lines (Crisp geometric lines matching favicon) -->
+    <!-- 'L' Shape -->
+    <path d="M -22 -22 V 22 H 10" stroke="rgba(0,0,0,0.95)" stroke-width="9" stroke-linecap="butt" stroke-linejoin="miter" fill="none"/>
+    <!-- 'M' Shape -->
+    <path d="M -10 8 V -22 L 6 8 L 22 -22 V 22" stroke="rgba(0,0,0,0.95)" stroke-width="9" stroke-linecap="butt" stroke-linejoin="miter" fill="none"/>
+  </g>
+
+  <!-- Logo Text: Designed according to DESIGN.md Typography rules -->
+  <text x="560" y="325" font-family="NotionInter, Inter, system-ui, -apple-system, sans-serif" font-size="76" font-weight="700" letter-spacing="-2.2px">
+    <tspan fill="rgba(0,0,0,0.95)">Notion </tspan>
+    <tspan fill="#097fe8">Portfolio</tspan>
+  </text>
+</svg>

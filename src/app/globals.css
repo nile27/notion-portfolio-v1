@@ -81,3 +81,8 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* 값이 없는 노션 속성 행 숨기기 */
+.notion-collection-row-property:has(.notion-collection-row-value > span:empty) {
+  display: none !important;
+}
