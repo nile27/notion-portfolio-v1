@@ -84,6 +84,9 @@ export function SkillsSection() {
                     ? (isDark ? "#e4e4e7" : "#3f3f46")
                     : skill.color;
 
+                  // 스킬 이름 텍스트는 호버 시 항상 테마 대비색(다크: 흰색, 라이트: 검정)으로 통일
+                  const hoverTextColor = isDark ? "#ffffff" : "#000000";
+
                   const iconColor = isNeutral ? (isDark ? "#ffffff" : "#000000") : skill.color;
                   const iconBg = isNeutral 
                     ? (isDark ? "rgba(255, 255, 255, 0.12)" : "rgba(0, 0, 0, 0.08)") 
@@ -96,7 +99,7 @@ export function SkillsSection() {
                       whileHover={{
                         scale: 1.05,
                         borderColor: hoverColor,
-                        color: hoverColor,
+                        color: hoverTextColor,
                         boxShadow: `0 8px 20px -8px ${skill.glowColor}`,
                       }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
