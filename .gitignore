@@ -44,5 +44,4 @@ next-env.d.ts
 *.swo
 
 # skill component
-/src/components/skills/
 

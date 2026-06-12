@@ -3,6 +3,7 @@ import { portfolioData } from "@/data/data";
 import { ProjectSection } from "@/components/projects/project-section";
 import { Section } from "@/components/layout/section";
 import { HeroSection } from "@/components/hero/hero-section";
+import { SkillsSection } from "@/components/skills/skills-section";
 
 import { Metadata } from "next";
 import { SITE_CONFIG } from "@/config/site";
@@ -116,6 +117,9 @@ export default async function Home() {
           </div>
         </div>
       </Section>
+
+      {/* Skills Section */}
+      <SkillsSection />
 
       {/* Career Section */}
       <Section id="career" className="bg-secondary/30 py-24 scroll-mt-20">
