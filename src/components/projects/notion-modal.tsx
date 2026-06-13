@@ -101,7 +101,7 @@ export function NotionModal({ isOpen, onClose, notionId, title }: NotionModalPro
               [&_.notion-page-cover-wrapper]:h-[24vh] [&_.notion-page-cover-wrapper]:min-h-[150px]
               [&_.notion-page-icon-hero.notion-page-icon-image]:bg-white dark:[&_.notion-page-icon-hero.notion-page-icon-image]:bg-transparent
               [&_.notion-page-icon-hero.notion-page-icon-image]:border-4 [&_.notion-page-icon-hero.notion-page-icon-image]:border-white dark:[&_.notion-page-icon-hero.notion-page-icon-image]:border-transparent
-              [&_.notion-page-icon-hero.notion-page-icon-image]:rounded-3xl
+              [&_.notion-page-icon-hero.notion-page-icon-image]:rounded-full
               [&_.notion-page-icon-hero.notion-page-icon-image]:shadow-sm dark:[&_.notion-page-icon-hero.notion-page-icon-image]:shadow-none
               [&_.notion-page-icon-hero.notion-page-icon-image]:!overflow-hidden
               [&_.notion-text]:w-full [&_.notion-text]:max-w-full [&_.notion-text]:wrap-break-word
