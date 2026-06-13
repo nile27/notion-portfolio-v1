@@ -60,7 +60,8 @@ export function NotionModal({ isOpen, onClose, notionId, title }: NotionModalPro
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent 
-        className="max-w-4xl w-[95vw] h-[90vh] p-0 border-none bg-white dark:bg-[#191919] shadow-2xl flex flex-col focus:outline-none overflow-hidden relative rounded-2xl"
+        showCloseButton={false}
+        className="max-w-4xl w-[95vw] h-[90vh] p-0 border-none bg-white dark:bg-[#191919] shadow-2xl flex flex-col focus:outline-none overflow-hidden rounded-2xl"
         style={{
           // @ts-ignore
           "--bg-color": resolvedTheme === "dark" ? "#191919" : "#ffffff",
