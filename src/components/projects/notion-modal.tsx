@@ -98,7 +98,7 @@ export function NotionModal({ isOpen, onClose, notionId, title }: NotionModalPro
             <div className="w-full h-full 
               [&_.notion]:font-sans [&_.notion]:text-base
               [&_.notion-page]:!px-6 md:[&_.notion-page]:!px-12 [&_.notion-page]:box-border [&_.notion-page]:w-full [&_.notion-page]:max-w-full
-              [&_.notion-page-cover-wrapper]:!w-auto [&_.notion-page-cover-wrapper]:!-mx-6 md:[&_.notion-page-cover-wrapper]:!-mx-12 [&_.notion-page-cover-wrapper]:h-[24vh] [&_.notion-page-cover-wrapper]:min-h-[150px]
+              [&_.notion-page-cover-wrapper]:h-[24vh] [&_.notion-page-cover-wrapper]:min-h-[150px]
               [&_.notion-text]:w-full [&_.notion-text]:max-w-full [&_.notion-text]:wrap-break-word
               [&_.notion-callout]:w-full [&_.notion-callout]:max-w-full [&_.notion-callout]:box-border [&_.notion-callout]:wrap-break-word
               [&_.notion-column]:w-full [&_.notion-column]:max-w-full [&_.notion-column]:wrap-break-word
