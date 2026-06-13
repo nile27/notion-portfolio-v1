@@ -61,10 +61,10 @@ export function NotionModal({ isOpen, onClose, notionId, title }: NotionModalPro
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent 
         showCloseButton={false}
-        className="max-w-4xl w-[95vw] h-[90vh] p-0 border-none bg-white dark:bg-[#191919] shadow-2xl flex flex-col focus:outline-none overflow-hidden rounded-2xl"
+        className="max-w-4xl w-[95vw] h-[90vh] p-0 border-none bg-white dark:bg-[#2F3437] shadow-2xl flex flex-col focus:outline-none overflow-hidden rounded-2xl"
         style={{
           // @ts-ignore
-          "--bg-color": resolvedTheme === "dark" ? "#191919" : "#ffffff",
+          "--bg-color": resolvedTheme === "dark" ? "#2F3437" : "#ffffff",
           // @ts-ignore
           "--fg-color": resolvedTheme === "dark" ? "rgba(255, 255, 255, 0.9)" : "rgba(55, 53, 47, 0.9)",
         }}
@@ -76,20 +76,20 @@ export function NotionModal({ isOpen, onClose, notionId, title }: NotionModalPro
             target="_blank"
             rel="noopener noreferrer"
             title="노션에서 열기"
-            className="p-1.5 bg-white/80 dark:bg-[#191919]/80 backdrop-blur-md hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-full border border-neutral-200/50 dark:border-neutral-800/50 transition-all text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white shadow-sm flex items-center justify-center focus:outline-none outline-none focus:ring-0"
+            className="p-1.5 bg-white/80 dark:bg-[#2F3437]/80 backdrop-blur-md hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-full border border-neutral-200/50 dark:border-neutral-800/50 transition-all text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white shadow-sm flex items-center justify-center focus:outline-none outline-none focus:ring-0"
           >
             <ExternalLink className="h-4 w-4" />
           </a>
           <button
             onClick={onClose}
             title="닫기"
-            className="p-1.5 bg-white/80 dark:bg-[#191919]/80 backdrop-blur-md hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-full border border-neutral-200/50 dark:border-neutral-800/50 transition-all text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white shadow-sm flex items-center justify-center focus:outline-none outline-none focus:ring-0"
+            className="p-1.5 bg-white/80 dark:bg-[#2F3437]/80 backdrop-blur-md hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-full border border-neutral-200/50 dark:border-neutral-800/50 transition-all text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white shadow-sm flex items-center justify-center focus:outline-none outline-none focus:ring-0"
           >
             <X className="h-4 w-4" />
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto scrollbar-hide bg-white dark:bg-[#191919]">
+        <div className="flex-1 overflow-y-auto scrollbar-hide bg-white dark:bg-[#2F3437]">
           {isLoading ? (
             <div className="flex h-full items-center justify-center">
               <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
