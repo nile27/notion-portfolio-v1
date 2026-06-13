@@ -59,76 +59,71 @@ export function NotionModal({ isOpen, onClose, notionId, title }: NotionModalPro
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl w-[95vw] h-[90vh] px-3 py-0 border-none bg-background shadow-2xl flex flex-col focus:outline-none overflow-hidden">
-        {/* 상단 커스텀 네비게이션 바 */}
-        <div className="flex items-center justify-between px-3 py-4 border-b border-border bg-background/80 backdrop-blur-md sticky top-0 z-50">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground font-medium overflow-hidden">
-            <span className="whitespace-nowrap">포트폴리오</span>
-            <span className="opacity-50">/</span>
-            <div className="flex items-center gap-2 text-foreground truncate">
-              <FolderRoot className="h-4 w-4 text-blue-500 shrink-0" />
-              <span className="truncate font-semibold">{title}</span>
-              <a
-                href={notionUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-1 hover:bg-accent rounded-md transition-colors text-muted-foreground hover:text-accent-foreground border-none bg-transparent outline-none ring-0 focus:outline-none focus:ring-0"
-              >
-                <ExternalLink className="h-3.5 w-3.5" />
-              </a>
-            </div>
-          </div>
+      <DialogContent 
+        className="max-w-4xl w-[95vw] h-[90vh] p-0 border-none bg-white dark:bg-[#191919] shadow-2xl flex flex-col focus:outline-none overflow-hidden relative rounded-2xl"
+        style={{
+          // @ts-ignore
+          "--bg-color": resolvedTheme === "dark" ? "#191919" : "#ffffff",
+          // @ts-ignore
+          "--fg-color": resolvedTheme === "dark" ? "rgba(255, 255, 255, 0.9)" : "rgba(55, 53, 47, 0.9)",
+        }}
+      >
+        {/* 우측 상단 플로팅 컨트롤러 (노션 디자인 일체감 극대화) */}
+        <div className="absolute top-4 right-4 z-50 flex items-center gap-2">
+          <a
+            href={notionUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="노션에서 열기"
+            className="p-1.5 bg-white/80 dark:bg-[#191919]/80 backdrop-blur-md hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-full border border-neutral-200/50 dark:border-neutral-800/50 transition-all text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white shadow-sm flex items-center justify-center focus:outline-none outline-none focus:ring-0"
+          >
+            <ExternalLink className="h-4 w-4" />
+          </a>
           <button
             onClick={onClose}
-            className="rounded-full p-1.5 hover:bg-accent transition-colors"
+            title="닫기"
+            className="p-1.5 bg-white/80 dark:bg-[#191919]/80 backdrop-blur-md hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-full border border-neutral-200/50 dark:border-neutral-800/50 transition-all text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white shadow-sm flex items-center justify-center focus:outline-none outline-none focus:ring-0"
           >
-            <X className="h-5 w-5" />
+            <X className="h-4 w-4" />
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto scrollbar-hide">
+        <div className="flex-1 overflow-y-auto scrollbar-hide bg-white dark:bg-[#191919]">
           {isLoading ? (
-
             <div className="flex h-full items-center justify-center">
               <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
             </div>
           ) : recordMap ? (
-            <div className="w-full">
-              <div className="px-6 pt-12 md:px-12 md:pt-16 max-w-full">
-                <h1 className="text-3xl md:text-5xl font-bold tracking-tight wrap-break-word leading-tight">
-                  {title}
-                </h1>
-                <div className="mt-8 h-px bg-border w-full opacity-50" />
-              </div>
-
-              <div className="w-full h-full 
-                [&_.notion-page]:px-6 [&_.notion-page]:py-6 md:[&_.notion-page]:px-12 md:[&_.notion-page]:py-8 [&_.notion-page]:box-border 
-                [&_.notion]:font-(--font-noto)! [&_.notion]:text-base
-                [&_.notion-text]:w-full [&_.notion-text]:max-w-full [&_.notion-text]:wrap-break-word
-                [&_.notion-callout]:w-full [&_.notion-callout]:max-w-full [&_.notion-callout]:box-border [&_.notion-callout]:wrap-break-word
-                [&_.notion-column]:w-full [&_.notion-column]:max-w-full [&_.notion-column]:wrap-break-word
-                [&_.notion-list]:w-full [&_.notion-list]:max-w-full
-                [&_.notion-list-item]:wrap-break-word
-                [&_.notion-h1]:wrap-break-word [&_.notion-h2]:wrap-break-word [&_.notion-h3]:wrap-break-word
-                [&_.notion-asset-wrapper]:max-w-full
-                [&_.notion-collection]:w-full [&_.notion-collection]:overflow-x-auto">
-                <NotionRenderer
-                  recordMap={recordMap}
-                  fullPage={false}
-                  darkMode={resolvedTheme === "dark"}
-                  disableHeader={true}
-                  className="w-full"
-                  components={{
-                    Collection,
-                    Code,
-                    Equation,
-                    PageLink: (props: any) => (
-                      <a {...props} target="_blank" rel="noopener noreferrer" />
-                    ),
-                  }}
-                  mapPageUrl={(pageId) => `https://notion.so/${pageId.replace(/-/g, "")}`}
-                />
-              </div>
+            <div className="w-full h-full 
+              [&_.notion]:font-sans [&_.notion]:text-base
+              [&_.notion-page]:px-6 sm:[&_.notion-page]:px-16 md:[&_.notion-page]:px-24 [&_.notion-page]:box-border [&_.notion-page]:w-full [&_.notion-page]:max-w-full
+              [&_.notion-page-cover-wrapper]:w-full [&_.notion-page-cover-wrapper]:max-w-full [&_.notion-page-cover-wrapper]:h-[24vh] [&_.notion-page-cover-wrapper]:min-h-[150px]
+              [&_.notion-text]:w-full [&_.notion-text]:max-w-full [&_.notion-text]:wrap-break-word
+              [&_.notion-callout]:w-full [&_.notion-callout]:max-w-full [&_.notion-callout]:box-border [&_.notion-callout]:wrap-break-word
+              [&_.notion-column]:w-full [&_.notion-column]:max-w-full [&_.notion-column]:wrap-break-word
+              [&_.notion-list]:w-full [&_.notion-list]:max-w-full
+              [&_.notion-list-item]:wrap-break-word
+              [&_.notion-h1]:wrap-break-word [&_.notion-h2]:wrap-break-word [&_.notion-h3]:wrap-break-word
+              [&_.notion-asset-wrapper]:max-w-full
+              [&_.notion-collection]:w-full [&_.notion-collection]:overflow-x-auto
+              [&_.notion-title]:text-3xl sm:[&_.notion-title]:text-4xl md:[&_.notion-title]:text-5xl [&_.notion-title]:font-bold [&_.notion-title]:tracking-tight [&_.notion-title]:wrap-break-word [&_.notion-title]:leading-tight
+            ">
+              <NotionRenderer
+                recordMap={recordMap}
+                fullPage={true}
+                darkMode={resolvedTheme === "dark"}
+                disableHeader={true}
+                className="w-full"
+                components={{
+                  Collection,
+                  Code,
+                  Equation,
+                  PageLink: (props: any) => (
+                    <a {...props} target="_blank" rel="noopener noreferrer" />
+                  ),
+                }}
+                mapPageUrl={(pageId) => `https://notion.so/${pageId.replace(/-/g, "")}`}
+              />
             </div>
           ) : (
             <div className="flex h-full items-center justify-center text-muted-foreground">
