@@ -107,6 +107,7 @@ export function NotionModal({ isOpen, onClose, notionId, title }: NotionModalPro
               [&_.notion-h1]:wrap-break-word [&_.notion-h2]:wrap-break-word [&_.notion-h3]:wrap-break-word
               [&_.notion-asset-wrapper]:max-w-full
               [&_.notion-collection]:w-full [&_.notion-collection]:overflow-x-auto
+              [&_.notion-simple-table]:!w-full
               [&_.notion-title]:text-3xl sm:[&_.notion-title]:text-4xl md:[&_.notion-title]:text-5xl [&_.notion-title]:font-bold [&_.notion-title]:tracking-tight [&_.notion-title]:wrap-break-word [&_.notion-title]:leading-tight
             ">
               <NotionRenderer
