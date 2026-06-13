@@ -199,85 +199,225 @@ export const portfolioData = {
     },
   ],
   skills: [
+    // JavaScript & TypeScript
     {
-      name: "C#",
-      level: "Intermediate",
-      description: "WPF, WinForms 기반 데스크톱 앱 개발 경험이 있으며, 객체지향 설계(OOP)와 클린 코드를 지향합니다.",
-      color: "#9B4F96",
-      glowColor: "rgba(155, 79, 150, 0.2)",
-      category: "Languages",
-    },
-    {
+      type: "single",
       name: "TypeScript",
       level: "Intermediate",
       description: "엄격한 타입 정의를 통해 코드의 안정성을 확보하고, 디버깅 효율을 높여 웹 프로젝트 개발에 활용합니다.",
       color: "#3178C6",
       glowColor: "rgba(49, 120, 198, 0.2)",
-      category: "Languages",
+      category: "JavaScript & TypeScript",
     },
     {
+      type: "single",
       name: "JavaScript",
       level: "Intermediate",
       description: "ES6+ 문법에 익숙하며, 비동기 데이터 처리(Promise, async/await) 및 DOM 조작을 원활하게 수행합니다.",
       color: "#F7DF1E",
       glowColor: "rgba(247, 223, 30, 0.15)",
-      category: "Languages",
+      category: "JavaScript & TypeScript",
     },
     {
-      name: "React",
-      level: "Intermediate",
-      description: "컴포넌트 단위 설계에 익숙하며, 훅(Hooks)과 Context API를 활용한 효과적인 상태 관리가 가능합니다.",
+      type: "group",
+      name: "Web Development",
       color: "#61DAFB",
       glowColor: "rgba(97, 218, 251, 0.2)",
-      category: "Frameworks",
+      category: "JavaScript & TypeScript",
+      subSkills: [
+        {
+          name: "Next.js",
+          level: "Intermediate",
+          description: "SSR/SSG 개념을 실무에 적용하여 속도가 빠른 프리페칭을 구현하고, 메타데이터와 JSON-LD를 통한 SEO를 설계합니다.",
+          color: "#ffffff",
+          role: "FE"
+        },
+        {
+          name: "React",
+          level: "Intermediate",
+          description: "컴포넌트 단위 설계에 익숙하며, 훅(Hooks)과 Context API를 활용한 효과적인 상태 관리가 가능합니다.",
+          color: "#61DAFB",
+          role: "FE"
+        },
+        {
+          name: "Express.js",
+          level: "Basic",
+          description: "Node.js 기반 REST API 서버를 구현하고, 라우터 설정 및 백엔드 서비스 연동을 경험했습니다.",
+          color: "#339933",
+          role: "BE"
+        }
+      ]
     },
     {
-      name: "Next.js",
-      level: "Intermediate",
-      description: "SSR/SSG 개념을 실무에 적용하여 속도가 빠른 프리페칭을 구현하고, 메타데이터와 JSON-LD를 통한 SEO를 설계합니다.",
-      color: "#ffffff",
-      glowColor: "rgba(255, 255, 255, 0.15)",
-      category: "Frameworks",
+      type: "group",
+      name: "State Management",
+      color: "#FF4154",
+      glowColor: "rgba(255, 65, 84, 0.2)",
+      category: "JavaScript & TypeScript",
+      subSkills: [
+        {
+          name: "React Query",
+          level: "Intermediate",
+          description: "서버 상태 관리 라이브러리로 활용하여 비동기 데이터 캐싱, 백그라운드 프리페칭 및 데이터 동기화를 효율적으로 처리합니다.",
+          color: "#FF4154"
+        },
+        {
+          name: "Redux",
+          level: "Intermediate",
+          description: "전역 상태 관리 라이브러리인 Redux-toolkit을 사용하여 컴포넌트 간 복잡한 데이터 흐름을 예측 가능하게 관리합니다.",
+          color: "#764ABC"
+        },
+        {
+          name: "Zustand",
+          level: "Intermediate",
+          description: "가볍고 직관적인 React 전역 상태 관리 라이브러리를 사용해 불필요한 리렌더링 없이 유연하게 전역 상태를 제어합니다.",
+          color: "#453224"
+        }
+      ]
     },
     {
-      name: "Tailwind CSS",
-      level: "Intermediate",
-      description: "유틸리티 퍼스트 클래스를 적극 활용하여 반응형 레이아웃 및 다크 모드 스타일링을 효율적으로 구현합니다.",
+      type: "group",
+      name: "CSS & Styling",
       color: "#06B6D4",
       glowColor: "rgba(6, 182, 212, 0.2)",
-      category: "Frameworks",
+      category: "JavaScript & TypeScript",
+      subSkills: [
+        {
+          name: "Tailwind CSS",
+          level: "Intermediate",
+          description: "유틸리티 퍼스트 클래스를 적극 활용하여 반응형 레이아웃 및 다크 모드 스타일링을 효율적으로 구현합니다.",
+          color: "#06B6D4"
+        },
+        {
+          name: "Styled-Components",
+          level: "Intermediate",
+          description: "CSS-in-JS 스타일링 라이브러리를 활용하여 컴포넌트 레벨에서 모듈화되고 동적인 스타일링을 설계합니다.",
+          color: "#DB7093"
+        },
+        {
+          name: "Framer Motion",
+          level: "Basic",
+          description: "React용 인터랙티브 애니메이션 및 모션 그래픽을 컴포넌트에 유연하게 연동합니다.",
+          color: "#E10098"
+        }
+      ]
     },
     {
-      name: "Express.js",
-      level: "Basic",
-      description: "Node.js 기반 REST API 서버를 구현하고, 라우터 설정 및 백엔드 서비스 연동을 경험했습니다.",
-      color: "#339933",
-      glowColor: "rgba(51, 153, 81, 0.15)",
-      category: "Backend & Database",
-    },
-    {
+      type: "single",
       name: "MongoDB",
       level: "Basic",
       description: "NoSQL DB 데이터 모델 설계가 가능하며, Mongoose를 연동한 데이터 CRUD 기능을 구현할 수 있습니다.",
       color: "#47A248",
       glowColor: "rgba(71, 162, 72, 0.15)",
-      category: "Backend & Database",
+      category: "Database",
     },
     {
-      name: "Git",
+      type: "single",
+      name: "Firebase",
+      level: "Basic",
+      description: "BaaS 플랫폼을 활용한 간편한 인증 기능(OAuth, OTP) 연동 및 실시간 데이터베이스 조회 기능을 경험했습니다.",
+      color: "#FFCA28",
+      glowColor: "rgba(255, 202, 40, 0.2)",
+      category: "Database",
+    },
+
+    // C# & .NET
+    {
+      type: "single",
+      name: "C#",
       level: "Intermediate",
-      description: "Git Flow 협업 전략을 이해하고, 브랜치 병합 및 충돌 해결을 통한 소스코드 버전 관리가 가능합니다.",
+      description: "WPF, WinForms 기반 데스크톱 앱 개발 경험이 있으며, 객체지향 설계(OOP)와 클린 코드를 지향합니다.",
+      color: "#9B4F96",
+      glowColor: "rgba(155, 79, 150, 0.2)",
+      category: "C# & .NET",
+    },
+    {
+      type: "group",
+      name: ".NET & WPF",
+      color: "#512BD4",
+      glowColor: "rgba(81, 43, 212, 0.2)",
+      category: "C# & .NET",
+      subSkills: [
+        {
+          name: ".NET",
+          level: "Intermediate",
+          description: "C# 개발 생태계 내에서 WPF 등 클라이언트 애플리케이션 개발의 핵심 프레임워크로 활용합니다.",
+          color: "#512BD4"
+        },
+        {
+          name: "WPF",
+          level: "Intermediate",
+          description: "XAML 레이아웃 구성, 데이터 바인딩, MVVM 패턴을 도입하여 구조적으로 완성도 높은 데스크톱 앱을 만듭니다.",
+          color: "#178600"
+        }
+      ]
+    },
+
+    // Python
+    {
+      type: "single",
+      name: "Python",
+      level: "Basic",
+      description: "Pandas 등을 활용한 데이터 정제 및 분석 스크립트 작성과 MediaPipe를 활용한 졸음 감지 프로그램 개발 경험이 있습니다.",
+      color: "#3776AB",
+      glowColor: "rgba(55, 118, 171, 0.2)",
+      category: "Python",
+    },
+    {
+      type: "group",
+      name: "Data & ML Libraries",
+      color: "#3776AB",
+      glowColor: "rgba(55, 118, 171, 0.2)",
+      category: "Python",
+      subSkills: [
+        {
+          name: "Pandas",
+          level: "Basic",
+          description: "파이썬 데이터 핸들링 라이브러리를 활용해 대용량 csv/공공 데이터를 병합 및 데이터셋으로 정제합니다.",
+          color: "#150458"
+        },
+        {
+          name: "MediaPipe",
+          level: "Basic",
+          description: "실시간 기계 학습 모델을 구현하여 얼굴 랜드마크 인식 및 좌표값 기반의 졸음 상태를 감지합니다.",
+          color: "#007FFF"
+        }
+      ]
+    },
+
+    // Tools & Cooperation
+    {
+      type: "group",
+      name: "Tools & Cooperation",
       color: "#F05032",
       glowColor: "rgba(240, 80, 50, 0.2)",
       category: "Tools & Cooperation",
-    },
-    {
-      name: "Figma",
-      level: "Basic",
-      description: "디자인 시안을 정밀하게 분석하고 마크업에 활용하며, 프로토타이핑을 통해 화면 설계 협업을 진행합니다.",
-      color: "#F24E1E",
-      glowColor: "rgba(242, 78, 30, 0.2)",
-      category: "Tools & Cooperation",
-    },
+      subSkills: [
+        {
+          name: "Git",
+          level: "Intermediate",
+          description: "Git Flow 협업 전략을 이해하고, 브랜치 병합 및 충돌 해결을 통한 소스코드 버전 관리가 가능합니다.",
+          color: "#F05032"
+        },
+        {
+          name: "Figma",
+          level: "Basic",
+          description: "디자인 시안을 정밀하게 분석하고 마크업에 활용하며, 프로토타이핑을 통해 화면 설계 협업을 진행합니다.",
+          color: "#F24E1E"
+        },
+        {
+          name: "Claude & Claude Code",
+          level: "Intermediate",
+          description: "Claude LLM 및 Claude Code CLI를 활용한 코드 구현, 버그 디버깅, 자동화 워크플로우 연동 등을 통해 개발 생산성을 극대화합니다.",
+          color: "#CC5A37"
+        },
+        {
+          name: "Antigravity",
+          level: "Intermediate",
+          description: "Google DeepMind AI 코딩 에이전트를 이용한 대규모 리팩토링, 자동화 테스트 구축 및 프로젝트 마이그레이션을 페어 프로그래밍으로 수행합니다.",
+          color: "#3B82F6"
+        }
+      ]
+    }
   ],
 };

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { portfolioData } from "@/data/data";
 import { Section } from "@/components/layout/section";
@@ -74,28 +73,6 @@ export function HeroSection() {
               About Me
             </a>
           </motion.div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
-          className="relative hidden lg:block"
-        >
-          <div className="relative z-10 overflow-hidden rounded-3xl border border-border/50 shadow-notion-deep bg-background/50 backdrop-blur-sm">
-            <Image
-              src="/hero_illustration_1777878154250.png"
-              alt="Developer Illustration"
-              width={600}
-              height={600}
-              className="object-cover transition-transform duration-700 hover:scale-110"
-              priority
-              fetchPriority="high"
-            />
-
-          </div>
-          <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full bg-primary/30 blur-2xl animate-bounce" />
-          <div className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-accent/20 blur-3xl animate-pulse" />
         </motion.div>
       </div>
 
