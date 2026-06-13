@@ -97,8 +97,8 @@ export function NotionModal({ isOpen, onClose, notionId, title }: NotionModalPro
           ) : recordMap ? (
             <div className="w-full h-full 
               [&_.notion]:font-sans [&_.notion]:text-base
-              [&_.notion-page]:px-6 sm:[&_.notion-page]:px-16 md:[&_.notion-page]:px-24 [&_.notion-page]:box-border [&_.notion-page]:w-full [&_.notion-page]:max-w-full
-              [&_.notion-page-cover-wrapper]:w-full [&_.notion-page-cover-wrapper]:max-w-full [&_.notion-page-cover-wrapper]:h-[24vh] [&_.notion-page-cover-wrapper]:min-h-[150px]
+              [&_.notion-page]:!px-10 sm:[&_.notion-page]:!px-20 md:[&_.notion-page]:!px-28 [&_.notion-page]:box-border [&_.notion-page]:w-full [&_.notion-page]:max-w-full
+              [&_.notion-page-cover-wrapper]:!w-auto [&_.notion-page-cover-wrapper]:!-mx-10 sm:[&_.notion-page-cover-wrapper]:!-mx-20 md:[&_.notion-page-cover-wrapper]:!-mx-28 [&_.notion-page-cover-wrapper]:h-[24vh] [&_.notion-page-cover-wrapper]:min-h-[150px]
               [&_.notion-text]:w-full [&_.notion-text]:max-w-full [&_.notion-text]:wrap-break-word
               [&_.notion-callout]:w-full [&_.notion-callout]:max-w-full [&_.notion-callout]:box-border [&_.notion-callout]:wrap-break-word
               [&_.notion-column]:w-full [&_.notion-column]:max-w-full [&_.notion-column]:wrap-break-word
