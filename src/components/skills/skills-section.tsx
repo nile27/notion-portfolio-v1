@@ -148,7 +148,7 @@ export function SkillsSection() {
                           {/* 단일 스킬일 때만 아이콘 좌측 노출 */}
                           {!isGroup && (
                             <div 
-                              className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors shrink-0"
+                              className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors shrink-0 p-1"
                               style={{ 
                                 backgroundColor: isDark
                                   ? (SOLID_LOGOS.includes(skill.name) ? "transparent" : "#ffffff")

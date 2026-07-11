@@ -326,6 +326,15 @@ export const portfolioData = {
       glowColor: "rgba(255, 202, 40, 0.2)",
       category: "Database",
     },
+    {
+      type: "single",
+      name: "SQLite",
+      level: "Basic",
+      description: "경량형 관계형 데이터베이스를 활용하여 로컬 데이터 저장 및 갱신 처리를 구현하고, 데스크톱 애플리케이션의 데이터 영속성을 관리해 보았습니다.",
+      color: "#003B57",
+      glowColor: "rgba(0, 59, 87, 0.15)",
+      category: "Database",
+    },
 
     // C# & .NET
     {
