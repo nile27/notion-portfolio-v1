@@ -59,6 +59,14 @@ export const portfolioData = {
       categories: ["Next.js"],
     },
     {
+      title: "DNF Discord Bot",
+      description: "캐릭터 아이템 획득 알림을 제공하는 디스코드 봇 및 백엔드 데몬입니다.",
+      tags: ["C#", ".NET 10.0", "Discord.Net", "SQLite", "네오플 공용 API"],
+      notionId: "38061be3ce8580dfb962c851a0ca6a1b",
+      image: "/logo/DNF Discord Bot.png",
+      categories: ["C#"],
+    },
+    {
       title: "MarkFlow - 마크다운 문서 병합 데스크톱 앱",
       description: "여러 개로 나뉘어 작성된 마크다운 문서 조각들을 드래그 앤 드롭하여 배치하고, 관계를 시각화한 뒤 하나로 병합해 주는 C# WPF 기반 데스크톱 생산성 애플리케이션입니다.",
       tags: ["C#", "WPF", ".NET", "AvalonEdit", "Markdown"],
@@ -130,6 +138,7 @@ export const portfolioData = {
       image: "/logo/잇츠 .svg",
       categories: ["React"],
     },
+
   ],
   education: {
     academic: [

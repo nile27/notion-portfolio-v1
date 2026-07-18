@@ -18,7 +18,7 @@ export function ProjectSection() {
     { id: "All", label: "전체" },
     { id: "Next.js", label: "Next.js" },
     { id: "React", label: "React" },
-    { id: "C#", label: "C# (WPF)" },
+    { id: "C#", label: "C#" },
     { id: "Python", label: "Python" },
     { id: "Express.js", label: "Express.js" },
     { id: "JavaScript", label: "JavaScript" },
