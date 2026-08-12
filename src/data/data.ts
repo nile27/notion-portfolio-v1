@@ -7,7 +7,7 @@ export const portfolioData = {
   about: {
     name: "임민규",
     email: "ddj03104@gmail.com",
-    image: "/profile_img.jpeg",
+    image: "/X6sj3.jpg",
     github: "https://github.com/nile27",
     university: "한남대학교 컴퓨터무인기술학과 컴퓨터 트랙 (졸업)",
     introduction: `사용자의 불편을 해소하는 데서 모든 개발이 시작된다고 믿습니다. 직관적인 UI/UX부터 안정적인 시스템 구조까지 서비스 전반의 완성도를 높여 사용자에게 최선의 경험을 전달하고자 합니다.

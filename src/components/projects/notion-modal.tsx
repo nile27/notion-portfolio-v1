@@ -1,6 +1,4 @@
 "use client"
-
-import { useState, useEffect } from "react"
 import { NotionRenderer } from "react-notion-x"
 import { ExtendedRecordMap } from "notion-types"
 import { useTheme } from "next-themes"
@@ -16,7 +14,7 @@ import {
   Dialog,
   DialogContent,
 } from "@/components/ui/dialog"
-import { Loader2, X, FolderRoot, ExternalLink } from "lucide-react"
+import { Loader2, X, ExternalLink } from "lucide-react"
 
 // 노션 데이터베이스 및 코드 렌더링을 위한 컴포넌트 동적 임포트
 const Collection = dynamic(() =>
