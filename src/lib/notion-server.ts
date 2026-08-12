@@ -2,7 +2,9 @@ import { NotionAPI } from "notion-client"
 import { portfolioData } from "@/data/data"
 import { ExtendedRecordMap } from "notion-types"
 
-const notion = new NotionAPI()
+const notion = new NotionAPI({
+  apiBaseUrl: "https://app.notion.com/api/v3"
+})
 
 export async function getAllProjectRecordMaps() {
   try {
