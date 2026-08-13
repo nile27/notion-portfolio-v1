@@ -45,3 +45,9 @@ next-env.d.ts
 
 # skill component
 
+
+# 포트폴리오 PDF 작업용 초안 (git 추적 제외)
+portfolio_drafts/
+
+# 미사용 로컬 폰트(서브셋 없는 otf)
+src/app/fonts/
