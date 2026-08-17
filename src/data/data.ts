@@ -145,7 +145,7 @@ export const portfolioData = {
       {
         institution: "한남대학교",
         program: "컴퓨터무인기술학과 컴퓨터 트랙 (졸업)",
-        period: "2016.03 - 2023.02",
+        period: "2015.03 - 2022.08",
       },
       {
         institution: "Hannam Design Factory",
@@ -157,7 +157,7 @@ export const portfolioData = {
     bootcamps: [
       {
         institution: "한국소프트웨어기술진흥협회",
-        program: "AI를 활용한 Node.js와 JavaScript 기반 웹 개발자 양성",
+        program: "AI를 활용한 Node.js와 JavaScript 기반 웹 개발자 양성 (수로)",
         period: "2026.02 - 2026.07",
         description: "C·C++로 프로그래밍 기초 학습, C#으로 WinForms 데스크톱 앱 구현\n이후 React, Node.js/Express 기반 웹 개발 기술 학습",
       },
