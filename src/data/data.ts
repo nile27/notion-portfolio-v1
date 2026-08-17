@@ -164,7 +164,7 @@ export const portfolioData = {
       {
         institution: "코드잇 스프린트",
         program: "심화 프론트엔드 엔지니어 부트캠프 (수료)",
-        period: "2024.06 - 2024.08",
+        period: "2025.06 - 2025.08",
         description: "Next.js 기반 jest, Tailwind CSS 등 프론트엔드 현업에 필요한 심화 기술 강의 수강 및 팀 협업 프로젝트 진행",
       },
       {
