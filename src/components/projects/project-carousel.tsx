@@ -106,6 +106,7 @@ export function ProjectCarousel({ onProjectClick, activeCategory }: ProjectCarou
                     className={isActive
                       ? "shadow-2xl ring-1 ring-border dark:shadow-[0_0_40px_rgba(255,255,255,0.08)] dark:ring-white/10"
                       : "shadow-md grayscale-[0.2] dark:shadow-none dark:border dark:border-border/30"}
+                    priority={i <= 2 || i === projects.length - 1}
                   />
                 </motion.div>
               )

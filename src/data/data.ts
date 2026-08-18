@@ -51,6 +51,14 @@ export const portfolioData = {
   ],
   projects: [
     {
+      title: "MarkFlow - 마크다운 노드 기반 실시간 협업 캔버스",
+      description: "여러 명이 마크다운 노드를 동시에 편집하는 협업 도구의 백엔드를 담당해, NestJS의 Guard·Pipe·Filter 라이프사이클로 구조를 잡고 Socket.io 실시간 동기화와 노드 단위 소프트 락으로 동시 편집 충돌을 제어한 프로젝트입니다.",
+      tags: ["NestJS", "TypeScript", "Socket.io", "Prisma", "PostgreSQL", "JWT", "Zod"],
+      notionId: "3c061be3ce8580e59fd6d3845c4a5896",
+      image: "/logo/MarkFlow-Web.svg",
+      categories: ["NestJS"],
+    },
+    {
       title: "Notion_Portfolio - 포트폴리오 웹사이트",
       description: "Notion을 CMS로 활용해 콘텐츠를 실시간으로 관리하고, TanStack Query 백그라운드 프리페칭과 Dynamic Import를 활용하여 Lighthouse 성능 99점 및 검색 엔진 최적화(SEO)를 달성한 포트폴리오 사이트입니다.",
       tags: ["Next.js", "TypeScript", "react-notion-x", "TanStack Query", "Tailwind CSS", "Framer Motion"],
@@ -62,7 +70,7 @@ export const portfolioData = {
       title: "DNF Discord Bot",
       description: "캐릭터 아이템 획득 알림을 제공하는 디스코드 봇 및 백엔드 데몬입니다.",
       tags: ["C#", ".NET 10.0", "Discord.Net", "SQLite", "네오플 공용 API"],
-      notionId: "38061be3ce8580dfb962c851a0ca6a1b",
+      notionId: "3c061be3ce8580e9b5bbd99cca872cbc",
       image: "/logo/DNF Discord Bot.png",
       categories: ["C#"],
     },

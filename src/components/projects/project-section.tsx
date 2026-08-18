@@ -16,6 +16,7 @@ export function ProjectSection() {
 
   const categories = [
     { id: "All", label: "전체" },
+    { id: "NestJS", label: "NestJS" },
     { id: "Next.js", label: "Next.js" },
     { id: "React", label: "React" },
     { id: "C#", label: "C#" },
@@ -65,7 +66,7 @@ export function ProjectSection() {
       <h2 className="section-heading">Projects</h2>
 
       {/* 기술 스택 카테고리 필터 바 */}
-      <div className="flex flex-nowrap items-center justify-start sm:justify-center gap-1.5 md:gap-3 mt-8 md:mt-10 px-2 max-w-3xl mx-auto overflow-x-auto scrollbar-hide">
+      <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mt-8 md:mt-10 px-4 max-w-5xl mx-auto py-2">
         {categories.map((category) => {
           const isActive = activeCategory === category.id
           return (

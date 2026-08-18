@@ -15,9 +15,10 @@ interface ProjectCardProps {
   }
   onClick: () => void
   className?: string
+  priority?: boolean
 }
 
-export function ProjectCard({ project, onClick, className }: ProjectCardProps) {
+export function ProjectCard({ project, onClick, className, priority }: ProjectCardProps) {
   return (
     <div
       className={cn(
@@ -35,6 +36,7 @@ export function ProjectCard({ project, onClick, className }: ProjectCardProps) {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform duration-500"
+            priority={priority}
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-muted/50">
