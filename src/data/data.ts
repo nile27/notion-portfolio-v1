@@ -51,6 +51,14 @@ export const portfolioData = {
   ],
   projects: [
     {
+      title: "TeamUp - 비개발자도 기획자로 참여하는 사이드프로젝트 팀원 매칭 플랫폼",
+      description: "Next.js ISR/서버 액션 기반 웹과 React Native 모바일 앱을 REST API로 연동한 팀원 매칭 서비스. Server Action의 자동 리렌더링 특성을 근본 원인으로 규명해 조회수 버그를 해결하고, Realtime 구독 채널 충돌·DB 복제 설정 문제를 직접 진단·수정했습니다.",
+      tags: ["Next.js", "TypeScript", "React Native", "Prisma", "Supabase", "Tailwind CSS", "Playwright"],
+      notionId: "", // TODO: Notion 페이지 공개 설정 후 채워넣기
+      image: "/logo/TeamUp.png",
+      categories: ["Next.js", "React Native"],
+    },
+    {
       title: "Notion_Portfolio - 포트폴리오 웹사이트",
       description: "Notion을 CMS로 활용해 콘텐츠를 실시간으로 관리하고, TanStack Query 백그라운드 프리페칭과 Dynamic Import를 활용하여 Lighthouse 성능 99점 및 검색 엔진 최적화(SEO)를 달성한 포트폴리오 사이트입니다.",
       tags: ["Next.js", "TypeScript", "react-notion-x", "TanStack Query", "Tailwind CSS", "Framer Motion"],
