@@ -40,9 +40,9 @@ export function ContactSection() {
             {/* Email - Click to Copy */}
             <div
               onClick={handleCopyEmail}
-              className="group flex items-center gap-6 p-6 rounded-3xl border border-border bg-card/50 transition-all duration-300 hover:bg-accent hover:border-accent-foreground/20 cursor-pointer"
+              className="group flex items-center gap-6 p-6 rounded-3xl bg-secondary/20 shadow-tinted transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent cursor-pointer"
             >
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-secondary transition-colors group-hover:bg-accent-foreground/10 group-hover:text-accent-foreground">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-accent-foreground/10 text-accent-foreground transition-colors">
                 <Mail className="h-6 w-6" />
               </div>
               <div className="space-y-1">
@@ -58,9 +58,9 @@ export function ContactSection() {
               href={portfolioData.about.github}
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center gap-6 p-6 rounded-3xl border border-border bg-card/50 transition-all duration-300 hover:bg-accent hover:border-accent-foreground/20"
+              className="group flex items-center gap-6 p-6 rounded-3xl bg-secondary/20 shadow-tinted transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent"
             >
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-secondary transition-colors group-hover:bg-accent-foreground/10 group-hover:text-accent-foreground">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-accent-foreground/10 text-accent-foreground transition-colors">
                 <LinkIcon className="h-6 w-6" />
               </div>
               <div className="space-y-1">
@@ -76,7 +76,7 @@ export function ContactSection() {
 
       {/* 커스텀 토스트 알림 */}
       <div className={cn(
-        "fixed bottom-10 left-1/2 -translate-x-1/2 z-9999 transition-all duration-500 w-max pointer-events-none",
+        "fixed bottom-10 left-1/2 -translate-x-1/2 z-[60] transition-all duration-500 w-max pointer-events-none",
         showToast ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       )}>
         <div className="bg-foreground text-background px-6 py-3 rounded-2xl shadow-2xl font-bold text-sm flex items-center gap-3 border border-white/10 backdrop-blur-xl whitespace-nowrap">

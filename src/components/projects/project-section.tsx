@@ -19,7 +19,7 @@ export function ProjectSection() {
     { id: "NestJS", label: "NestJS" },
     { id: "Next.js", label: "Next.js" },
     { id: "React", label: "React" },
-    { id: "React Native", label: "React Native" },
+    // { id: "React Native", label: "React Native" }, // TODO: TeamUp 노션 업로드 후 주석 해제
     { id: "C#", label: "C#" },
     { id: "Python", label: "Python" },
     { id: "Express.js", label: "Express.js" },
@@ -97,9 +97,7 @@ export function ProjectSection() {
       </div>
 
       {/* 캐러셀 버전을 메인으로 사용 */}
-      <div className="bg-secondary/10 rounded-3xl py-6 mt-6">
-        <ProjectCarousel onProjectClick={handleOpenModal} activeCategory={activeCategory} />
-      </div>
+      <ProjectCarousel onProjectClick={handleOpenModal} activeCategory={activeCategory} />
 
       <NotionModal
         isOpen={!!selectedProjectId}

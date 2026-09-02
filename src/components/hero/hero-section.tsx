@@ -74,6 +74,27 @@ export function HeroSection() {
             </a>
           </motion.div>
         </motion.div>
+
+        {/* Right column: 손 흔드는 영상 (고정 배경색으로 합성, 라이트/다크 공통) */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3, duration: 0.9, ease: "easeOut" }}
+          className="relative hidden lg:flex items-center justify-center"
+        >
+          <div className="relative aspect-square w-full max-w-sm overflow-hidden rounded-[3rem] shadow-tinted border border-border/40">
+            <video
+              src="/wave-untouched.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="h-full w-full object-cover"
+            />
+            {/* 창문 너머로 보는 듯한 깊이감: 안쪽 비네트 + 얇은 하이라이트 링 */}
+            <div className="pointer-events-none absolute inset-0 rounded-[3rem] shadow-[inset_0_3px_16px_rgba(0,0,0,0.18),inset_0_-12px_28px_rgba(0,0,0,0.14)] ring-1 ring-inset ring-white/15" />
+          </div>
+        </motion.div>
       </div>
 
       <motion.div
