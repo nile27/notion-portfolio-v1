@@ -28,7 +28,7 @@ export function ProjectCard({ project, onClick, className, priority }: ProjectCa
       onClick={onClick}
     >
       {/* 이미지 영역: p-6과 object-contain으로 이미지 잘림 방지 */}
-      <div className="relative aspect-video overflow-hidden border-b border-border">
+      <div className="relative aspect-video overflow-hidden border-b border-border dark:border-white/15">
         {project.image ? (
           <Image
             src={project.image}

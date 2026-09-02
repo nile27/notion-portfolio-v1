@@ -86,7 +86,7 @@ export function ProjectCarousel({ onProjectClick, activeCategory }: ProjectCarou
                 <ProjectCard
                   project={project}
                   onClick={() => onProjectClick(project.notionId)}
-                  className="h-full shadow-md dark:border dark:border-border/30"
+                  className="h-full shadow-md dark:border dark:border-white/15 dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
                   priority={i < itemsPerPage}
                 />
               </div>
