@@ -19,7 +19,7 @@ export function ProjectSection() {
     { id: "NestJS", label: "NestJS" },
     { id: "Next.js", label: "Next.js" },
     { id: "React", label: "React" },
-    // { id: "React Native", label: "React Native" }, // TODO: TeamUp 노션 업로드 후 주석 해제
+    { id: "React Native", label: "React Native" },
     { id: "C#", label: "C#" },
     { id: "Python", label: "Python" },
     { id: "Express.js", label: "Express.js" },
