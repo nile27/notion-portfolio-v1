@@ -97,7 +97,7 @@ export function ProjectSection() {
       </div>
 
       {/* 캐러셀 버전을 메인으로 사용 */}
-      <div className="bg-secondary/10 rounded-3xl py-10 mt-10">
+      <div className="bg-secondary/10 rounded-3xl py-6 mt-6">
         <ProjectCarousel onProjectClick={handleOpenModal} activeCategory={activeCategory} />
       </div>
 

@@ -64,7 +64,7 @@ export function ProjectCarousel({ onProjectClick, activeCategory }: ProjectCarou
   }
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-4 py-8 md:py-20 group/carousel overflow-hidden">
+    <div className="relative w-full max-w-7xl mx-auto px-4 py-4 md:py-10 group/carousel overflow-hidden">
       <div className="flex flex-col items-center">
         {/* Swiper Viewport */}
         <div className="relative w-full overflow-hidden">
@@ -112,7 +112,7 @@ export function ProjectCarousel({ onProjectClick, activeCategory }: ProjectCarou
                   onClick={() => setPage(i)}
                   aria-label={`Go to page ${i + 1}`}
                   className={`h-1.5 rounded-full transition-all ${
-                    i === page ? "w-6 bg-accent-foreground" : "w-1.5 bg-accent/30 hover:bg-accent/50"
+                    i === page ? "w-6 bg-foreground" : "w-1.5 bg-foreground/25 hover:bg-foreground/50"
                   }`}
                 />
               ))}
