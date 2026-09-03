@@ -75,14 +75,14 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* Right column: 손 흔드는 영상 (고정 배경색으로 합성, 라이트/다크 공통) */}
+        {/* Right column: 손 흔드는 영상 (고정 배경색으로 합성, 라이트/다크 공통) — 모바일/태블릿은 데스크톱의 절반 크기 */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.9, ease: "easeOut" }}
-          className="relative hidden lg:flex items-center justify-center"
+          className="relative order-first flex items-center justify-center lg:order-none"
         >
-          <div className="relative aspect-square w-full max-w-sm overflow-hidden rounded-[3rem] shadow-tinted border border-border/40">
+          <div className="relative aspect-square w-full max-w-[12rem] lg:max-w-sm overflow-hidden rounded-[3rem] shadow-tinted border border-border/40">
             <video
               src="/wave-untouched.mp4"
               autoPlay
