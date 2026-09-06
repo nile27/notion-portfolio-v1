@@ -19,6 +19,10 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, onClick, className, priority }: ProjectCardProps) {
+  // "이름 - 소개" 형식의 타이틀을 두 줄로 분리 (소개가 없는 타이틀도 있음)
+  const [name, ...rest] = project.title.split(" - ")
+  const subtitle = rest.length > 0 ? rest.join(" - ") : null
+
   return (
     <div
       className={cn(
@@ -47,9 +51,17 @@ export function ProjectCard({ project, onClick, className, priority }: ProjectCa
 
       {/* 텍스트 영역 */}
       <div className="flex flex-col flex-1 p-8">
-        <h3 className="text-2xl font-bold mb-4 transition-colors group-hover:text-accent-foreground tracking-tight">
-          {project.title}
+        <h3 className={cn(
+          "text-2xl font-bold transition-colors group-hover:text-accent-foreground tracking-tight",
+          subtitle ? "mb-1" : "mb-4"
+        )}>
+          {name}
         </h3>
+        {subtitle && (
+          <p className="text-sm font-semibold text-muted-foreground/80 mb-4">
+            - {subtitle}
+          </p>
+        )}
         <p className="text-muted-foreground mb-8 line-clamp-3 text-base leading-relaxed">
           {project.description}
         </p>
