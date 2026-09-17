@@ -51,3 +51,7 @@ portfolio_drafts/
 
 # 미사용 로컬 폰트(서브셋 없는 otf)
 src/app/fonts/
+
+# 별도 작업용 로컬 폴더 (git 추적 제외)
+notion-print/
+notion2folio/
