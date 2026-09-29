@@ -1,5 +1,5 @@
 # 🚀 Notion-Powered Portfolio: Performance & SEO Optimization
-> **Lighthouse Performance 100점 달성 및 SEO 최적화를 목표로 진행한 포트폴리오**
+> **Lighthouse Performance 90점대 이상 유지 및 SEO 최적화를 목표로 진행한 포트폴리오**
 
 🔗 **[Live Demo (배포 링크) 보러가기](https://mingyu-portfolio.vercel.app)**
 
@@ -18,7 +18,7 @@
 
 ## 2. 프로젝트 목표 (Project Goals)
 *   **SEO 최적화**: 검색 엔진에서 내 포트폴리오가 잘 검색되도록 완벽한 메타 데이터 및 사이트맵 구조 설계.
-*   **Lighthouse 100점**: 웹 표준과 성능 지표(Core Web Vitals)의 최정점을 달성하여 기술적 역량 증명.
+*   **Lighthouse 90점대 이상 유지**: 웹 표준과 성능 지표(Core Web Vitals)에서 상위권 점수를 달성하여 기술적 역량 증명.
 
 <br />
 
@@ -71,12 +71,12 @@
 ### 🚨 도전 과제: ISR 방식의 퍼포먼스 하락 해결
 *   **원인**: ISR로 생성된 거대 HTML이 브라우저의 파싱 시간을 늦춰 Lighthouse 점수가 80점대로 하락.
 *   **해결**: 데이터를 HTML에 직접 주입하는 대신, 클라이언트 사이드에서 **비동기 프리페칭** 모델로 전환.
-*   **성과**: HTML 사이즈 90% 감소 및 퍼포먼스 점수 **100점** 복구.
+*   **성과**: HTML 사이즈 90% 감소 및 퍼포먼스 점수 **90점대 이상**으로 회복.
 
 ### 🖼️ 이미지 최적화 이슈 (LCP 지표 개선)
 *   **원인**: 첫 화면에서 가장 큰 비중을 차지하는 히어로 일러스트 이미지가 늦게 로드되어 LCP(Largest Contentful Paint) 지표가 하락함.
 *   **해결**: Next.js의 `Image` 컴포넌트에 `priority` 속성을 부여함과 동시에, 브라우저 힌트인 `fetchPriority="high"`를 명시적으로 설정하여 이미지 발견 및 로드 우선순위를 최상위로 끌어올림.
-*   **성과**: LCP 시간을 **1.2s**로 단축하며 성능 지표 100점 달성에 기여.
+*   **성과**: LCP 시간을 단축하며 성능 지표 90점대 이상 달성에 기여.
 
 ### 🚨 SSR/ISR 렌더링 지연 시 사용자에게 빈 화면(White Screen)이 노출되는 문제
 *   **원인**: Next.js App Router의 SSR 환경에서 비동기 데이터 페칭(Notion API 호출 등)이 지연될 때, `<Suspense>`나 `loading.tsx`가 지정되어 있지 않으면 완성된 HTML이 나올 때까지 서버가 응답을 블로킹(Blocking)하므로 TTFB가 저하되어 사용자가 빈 흰색 화면을 장시간 겪게 됨. (캐시가 없는 최초 ISR 온디맨드 생성 시에도 동일)
@@ -91,7 +91,7 @@
 
 ### 🏁 Lighthouse 성능 측정 결과
 ![Lighthouse Result](./public/lightHouse_second.PNG)
-*   **Performance 100점** 달성 및 모든 핵심 지표(Web Vitals)에서 **Pass** 등급을 획득했습니다.
+*   **Performance 90점대 이상** 달성 및 핵심 지표(Web Vitals) 대부분에서 **Pass** 등급을 획득했습니다.
 
 ### 🔗 OG Metadata 미리보기 테스트
 ![OG Metadata Preview](./public/og_metadata.PNG)

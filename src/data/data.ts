@@ -60,7 +60,7 @@ export const portfolioData = {
     },
     {
       title: "Notion_Portfolio - 포트폴리오 웹사이트",
-      description: "Notion을 CMS로 활용해 콘텐츠를 실시간으로 관리하고, TanStack Query 백그라운드 프리페칭과 Dynamic Import를 활용하여 Lighthouse 성능 99점 및 검색 엔진 최적화(SEO)를 달성한 포트폴리오 사이트입니다.",
+      description: "Notion을 CMS로 활용해 콘텐츠를 실시간으로 관리하고, TanStack Query 백그라운드 프리페칭과 Dynamic Import를 활용하여 Lighthouse 성능 90점대 이상 및 검색 엔진 최적화(SEO)를 달성한 포트폴리오 사이트입니다.",
       tags: ["Next.js", "TypeScript", "react-notion-x", "TanStack Query", "Tailwind CSS", "Framer Motion"],
       notionId: "37961be3ce858008ab4cf3c8642f496e",
       image: "/logo/Notion_Portfolio.svg",
