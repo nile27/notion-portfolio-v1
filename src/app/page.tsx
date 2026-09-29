@@ -66,12 +66,12 @@ export const metadata: Metadata = {
 export default async function Home() {
   const queryClient = new QueryClient();
 
-  // 서버 사이드 프리페칭 (진짜 0초 지연을 위한 캐싱)
+  // 모달 클릭 시 Notion API를 추가로 기다리지 않도록 전체 프로젝트 데이터를 서버에서 준비합니다.
   await queryClient.prefetchQuery({
     queryKey: ["projects-data"],
     queryFn: async () => {
       const data = await getAllProjectRecordMaps();
-      return JSON.parse(JSON.stringify(data)); // 직렬화 에러 방지
+      return JSON.parse(JSON.stringify(data));
     },
   });
 

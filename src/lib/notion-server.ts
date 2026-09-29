@@ -27,7 +27,6 @@ export async function getAllProjectRecordMaps() {
     const recordMaps: Record<string, ExtendedRecordMap> = {}
     results.forEach(({ id, recordMap }) => {
       if (recordMap) {
-        // 클라이언트와 매칭을 위해 하이픈 제거한 ID를 키로 사용
         const normalizedId = id.replace(/-/g, "")
         recordMaps[normalizedId] = recordMap
       }

@@ -1,6 +1,7 @@
 "use client"
 import { NotionRenderer } from "react-notion-x"
-import { ExtendedRecordMap } from "notion-types"
+import type { ExtendedRecordMap } from "notion-types"
+import type { ComponentProps, CSSProperties } from "react"
 import { useTheme } from "next-themes"
 import { useQuery } from "@tanstack/react-query"
 import dynamic from "next/dynamic"
@@ -31,21 +32,19 @@ interface NotionModalProps {
   isOpen: boolean
   onClose: () => void
   notionId: string | null
-  title: string
 }
 
-export function NotionModal({ isOpen, onClose, notionId, title }: NotionModalProps) {
+export function NotionModal({ isOpen, onClose, notionId }: NotionModalProps) {
   const { resolvedTheme } = useTheme()
 
-  // SSR Hydration을 통해 서버에서 미리 렌더링된 캐시 데이터를 즉시 사용합니다.
   const { data: allRecordMaps, isLoading } = useQuery<Record<string, ExtendedRecordMap>>({
     queryKey: ["projects-data"],
     queryFn: async () => {
-      const res = await fetch("/api/projects")
-      if (!res.ok) throw new Error("Failed to fetch")
-      return res.json()
+      const response = await fetch("/api/projects")
+      if (!response.ok) throw new Error("Failed to fetch projects")
+      return response.json()
     },
-    enabled: isOpen, // 모달이 열릴 때만 쿼리 활성화 (이미 캐시되어 있다면 즉시 반환)
+    enabled: isOpen,
     staleTime: 60 * 60 * 1000,
   })
 
@@ -61,11 +60,9 @@ export function NotionModal({ isOpen, onClose, notionId, title }: NotionModalPro
         showCloseButton={false}
         className="max-w-4xl w-[95vw] h-[90vh] p-0 border-none bg-white dark:bg-[#191919] shadow-2xl flex flex-col focus:outline-none overflow-hidden rounded-2xl"
         style={{
-          // @ts-ignore
           "--bg-color": resolvedTheme === "dark" ? "#191919" : "#ffffff",
-          // @ts-ignore
           "--fg-color": resolvedTheme === "dark" ? "rgba(255, 255, 255, 0.9)" : "rgba(55, 53, 47, 0.9)",
-        }}
+        } as CSSProperties & Record<`--${string}`, string>}
       >
         {/* 우측 상단 플로팅 컨트롤러 (노션 디자인 일체감 극대화) */}
         <div className="absolute top-4 right-4 z-50 flex items-center gap-2">
@@ -123,7 +120,7 @@ export function NotionModal({ isOpen, onClose, notionId, title }: NotionModalPro
                   Collection,
                   Code,
                   Equation,
-                  PageLink: (props: any) => (
+                  PageLink: (props: ComponentProps<"a">) => (
                     <a {...props} target="_blank" rel="noopener noreferrer" />
                   ),
                 }}

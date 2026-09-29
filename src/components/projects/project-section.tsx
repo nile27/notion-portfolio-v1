@@ -60,8 +60,6 @@ export function ProjectSection() {
     }
   }
 
-  const selectedProjectData = portfolioData.projects.find(p => p.notionId === selectedProjectId)
-
   return (
     <section id="projects" className="container mx-auto max-w-7xl px-4 scroll-mt-20">
       <h2 className="section-heading">Projects</h2>
@@ -103,7 +101,6 @@ export function ProjectSection() {
         isOpen={!!selectedProjectId}
         onClose={handleCloseModal}
         notionId={selectedProjectId}
-        title={selectedProjectData?.title || ""}
       />
 
     </section>

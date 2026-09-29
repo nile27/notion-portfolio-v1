@@ -55,3 +55,4 @@ src/app/fonts/
 # 별도 작업용 로컬 폴더 (git 추적 제외)
 notion-print/
 notion2folio/
+.env*

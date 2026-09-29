@@ -16,43 +16,23 @@ export function HeroSection() {
       </div>
 
       <div className="container max-w-6xl grid lg:grid-cols-2 gap-12 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="space-y-8 text-left"
-        >
+        <div className="space-y-8 text-left">
           <div className="space-y-4">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="display-hero font-bold tracking-tight text-foreground text-5xl sm:text-7xl leading-[1.1]"
-            >
+            <h1 className="display-hero font-bold tracking-tight text-foreground text-5xl sm:text-7xl leading-[1.1]">
               {hero.title.split(" ").map((word, i) => (
                 <span key={i} className="inline-block mr-3 last:mr-0">
                   {word}
                 </span>
               ))}
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-xl md:text-2xl font-medium text-muted-foreground leading-relaxed"
-            >
+            </h1>
+            <p className="text-xl md:text-2xl font-medium text-muted-foreground leading-relaxed">
               {hero.subtitle}
-            </motion.p>
+            </p>
           </div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 1 }}
-            className="max-w-[500px] text-lg text-muted-foreground/80 border-0 outline-none border-primary/30 "
-          >
+          <p className="max-w-[500px] text-lg text-muted-foreground/80 border-0 outline-none border-primary/30 ">
             {hero.description}
-          </motion.p>
+          </p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -73,7 +53,7 @@ export function HeroSection() {
               About Me
             </a>
           </motion.div>
-        </motion.div>
+        </div>
 
         {/* Right column: 손 흔드는 영상 (고정 배경색으로 합성, 라이트/다크 공통) — 모바일/태블릿은 데스크톱의 절반 크기 */}
         <motion.div
