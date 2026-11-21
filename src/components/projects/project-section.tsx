@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { portfolioData } from "@/data/data"
 import dynamic from "next/dynamic"
 import { motion } from "framer-motion"
@@ -13,6 +13,9 @@ import { ProjectCarousel } from "./project-carousel"
 export function ProjectSection() {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null)
   const [activeCategory, setActiveCategory] = useState<string>("All")
+  // 사이트 안에서 카드를 눌러 연 경우에만 history에 모달 항목이 쌓여 있다.
+  // 공유 링크(/#project-id)로 바로 들어온 경우엔 뒤로가기가 사이트 밖으로 나가므로 구분한다.
+  const openedInAppRef = useRef(false)
 
   const categories = [
     { id: "All", label: "전체" },
@@ -41,6 +44,8 @@ export function ProjectSection() {
         const id = hash.replace("#project-", "")
         setSelectedProjectId(id)
       } else {
+        // 브라우저 뒤로가기 등 어떤 경로로 닫혀도 다음 모달에 영향이 없도록 초기화
+        openedInAppRef.current = false
         setSelectedProjectId(null)
       }
     }
@@ -51,13 +56,19 @@ export function ProjectSection() {
   }, [])
 
   const handleOpenModal = (id: string) => {
+    openedInAppRef.current = true
     window.location.hash = `project-${id}`
   }
 
   const handleCloseModal = () => {
-    if (window.location.hash.startsWith("#project-")) {
+    if (!window.location.hash.startsWith("#project-")) return
+    if (openedInAppRef.current) {
       window.history.back()
+      return
     }
+    // 공유 링크로 바로 들어온 경우: 뒤로가면 사이트를 벗어나므로 현재 항목의 해시만 제거
+    window.history.replaceState(null, "", window.location.pathname + window.location.search)
+    setSelectedProjectId(null)
   }
 
   return (
